@@ -1,5 +1,6 @@
 import React from "react";
 import ContactForm from "./ContactForm";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function ContactSection() {
   return (
@@ -23,20 +24,35 @@ export default function ContactSection() {
             Redes Sociales
           </h3>
           <p className="mb-2 text-gray-700">Sígueme o envíame un mensaje:</p>
-          <ul className="flex flex-col gap-3 text-gray-800">
+          <ul className="flex flex-col gap-4 text-lg">
             <li>
-              <a href="https://www.facebook.com/emanuel.gauna" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
-                Facebook
+              <a
+                href="https://www.facebook.com/emanuel.gauna"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-blue-600 transition-colors"
+              >
+                <FaFacebookF className="text-blue-500 text-2xl" /> Facebook
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/lemagauna/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500">
-                Instagram
+              <a
+                href="https://www.instagram.com/lemagauna/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-pink-500 transition-colors"
+              >
+                <FaInstagram className="text-pink-500 text-2xl" /> Instagram
               </a>
             </li>
             <li>
-              <a href="https://wa.me/5491164371277" target="_blank" rel="noopener noreferrer" className="hover:text-green-500">
-                WhatsApp
+              <a
+                href="https://wa.me/5491164371277"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-green-500 transition-colors"
+              >
+                <FaWhatsapp className="text-green-500 text-2xl" /> WhatsApp
               </a>
             </li>
           </ul>

@@ -1,6 +1,7 @@
 // src/components/Home.jsx
 import React from "react";
 import { Helmet } from "react-helmet";
+import { FaWhatsapp } from "react-icons/fa"; // Ícono de WhatsApp
 
 export default function Home() {
   return (
@@ -36,16 +37,17 @@ export default function Home() {
       </section>
 
       {/* Botón de contacto */}
-      <section className="text-center mb-12">
-        <a
-          href="https://wa.me/5491164371277"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
-        >
-          Pedir presupuesto
-        </a>
-      </section>
+<section className="text-center mb-12">
+  <a
+    href="https://wa.me/5491164371277"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-2 px-8 py-4 bg-green-600 text-white text-lg font-bold rounded-2xl shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105"
+  >
+    <FaWhatsapp size={28} />
+    Pedir presupuesto
+  </a>
+</section>
 
       {/* Servicios destacados */}
       <section className="text-center max-w-3xl">

@@ -17,14 +17,29 @@ export default function Footer() {
         </div>
 
         {/* Redes Sociales */}
-        <div className="flex flex-col sm:flex-row gap-4 text-2xl justify-center">
-          <a href="https://www.facebook.com/emanuel.gauna" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
+        <div className="flex gap-6 text-3xl">
+          <a
+            href="https://www.facebook.com/emanuel.gauna"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400 hover:text-blue-200 transition-colors"
+          >
             <FaFacebookF />
           </a>
-          <a href="https://www.instagram.com/lemagauna/" target="_blank" rel="noopener noreferrer" className="hover:text-pink-300">
+          <a
+            href="https://www.instagram.com/lemagauna/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-pink-400 hover:text-pink-200 transition-colors"
+          >
             <FaInstagram />
           </a>
-          <a href="https://wa.me/5491164371277" target="_blank" rel="noopener noreferrer" className="hover:text-green-300">
+          <a
+            href="https://wa.me/5491164371277"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-green-400 hover:text-green-200 transition-colors"
+          >
             <FaWhatsapp />
           </a>
         </div>
