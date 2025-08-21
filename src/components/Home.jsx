@@ -1,11 +1,15 @@
 // src/components/Home.jsx
 import React from "react";
 import { Helmet } from "react-helmet";
-import { FaWhatsapp } from "react-icons/fa"; // Ícono de WhatsApp
+import { FaWhatsapp } from "react-icons/fa";
+import FondoLogo from "./FondoLogo";
 
 export default function Home() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center p-6 bg-gray-50">
+    <section className="relative min-h-screen flex flex-col items-center justify-center p-6 bg-gray-50">
+      {/* Fondo detrás del contenido */}
+      <FondoLogo opacity={10} size="180px" />
+
       {/* SEO */}
       <Helmet>
         <title>Yesería, Albañilería y Remodelaciones | Emanuel Gauna - Buenos Aires</title>
@@ -20,7 +24,7 @@ export default function Home() {
       </Helmet>
 
       {/* Header principal */}
-      <header className="text-center mb-12">
+      <header className="text-center mb-12 relative z-10">
         <h1 className="text-4xl font-bold text-blue-700 mb-4">
           Yesería e Interiores Gauna Hnos
         </h1>
@@ -30,27 +34,27 @@ export default function Home() {
       </header>
 
       {/* Mensaje llamativo */}
-      <section className="text-center mb-6 max-w-xl">
+      <section className="text-center mb-6 max-w-xl relative z-10">
         <p className="text-lg text-gray-800 font-semibold bg-yellow-100 p-4 rounded-lg shadow-md">
           Más de 15 años transformando hogares en Buenos Aires y AMBA. Solicitá tu presupuesto y trabajemos juntos en tu proyecto.
         </p>
       </section>
 
       {/* Botón de contacto */}
-<section className="text-center mb-12">
-  <a
-    href="https://wa.me/5491164371277"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 px-8 py-4 bg-green-600 text-white text-lg font-bold rounded-2xl shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105"
-  >
-    <FaWhatsapp size={28} />
-    Pedir presupuesto
-  </a>
-</section>
+      <section className="text-center mb-12 relative z-10">
+        <a
+          href="https://wa.me/5491164371277"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-green-600 text-white text-lg font-bold rounded-2xl shadow-lg hover:bg-green-700 transition-transform transform hover:scale-105"
+        >
+          <FaWhatsapp size={28} />
+          Pedir presupuesto
+        </a>
+      </section>
 
       {/* Servicios destacados */}
-      <section className="text-center max-w-3xl">
+      <section className="text-center max-w-3xl relative z-10">
         <h2 className="text-2xl font-bold text-blue-700 mb-6">Nuestros Servicios</h2>
         <p className="text-gray-700 mb-4">
           <strong>Yesería:</strong> Aplicado de yeso en paredes y techos, armado de cielorrasos, buñas, molduras y refacciones en general.

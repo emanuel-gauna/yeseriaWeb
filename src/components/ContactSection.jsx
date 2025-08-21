@@ -1,10 +1,11 @@
+// src/components/ContactSection.jsx
 import React from "react";
-import ContactForm from "./ContactForm";
+import ContactForm from "./ContactForm"; // Asegurate que la ruta sea correcta
 import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 export default function ContactSection() {
   return (
-    <section className="bg-gray-100 py-12 px-6">
+    <section className="bg-gray-100 py-12 px-6 relative z-20">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-12">
 
         {/* Formulario */}

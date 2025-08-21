@@ -3,7 +3,7 @@ import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm("xblkenrg");
+  const [state, handleSubmit] = useForm("xblkenrg"); // reemplaza "xblkenrg" con tu ID de Formspree si cambió
 
   if (state.succeeded) {
     return (
