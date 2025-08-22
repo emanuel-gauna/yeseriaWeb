@@ -1,7 +1,7 @@
 // src/components/ContactSection.jsx
 import React from "react";
 import ContactForm from "./ContactForm"; // Asegurate que la ruta sea correcta
-import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa";
 
 export default function ContactSection() {
   return (
@@ -17,6 +17,12 @@ export default function ContactSection() {
             Completa el formulario y te responderé lo antes posible.
           </p>
           <ContactForm />
+
+          {/* Mensaje de autoría */}
+          <p className="mt-6 text-sm text-gray-600">
+            💡 Esta página la desarrollé yo mismo.  
+            Si alguna marca de materiales como <strong>Durlock</strong>, <strong>Saint Gobain</strong> o <strong>Mapei</strong> quiere auspiciarme, ¡me encantaría trabajar juntos! 🙌
+          </p>
         </div>
 
         {/* Redes Sociales */}
@@ -54,6 +60,16 @@ export default function ContactSection() {
                 className="flex items-center gap-2 hover:text-green-500 transition-colors"
               >
                 <FaWhatsapp className="text-green-500 text-2xl" /> WhatsApp
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com/@yeseria.gauna?lang=es-419"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-black transition-colors"
+              >
+                <FaTiktok className="text-black text-2xl" /> TikTok
               </a>
             </li>
           </ul>

@@ -1,50 +1,27 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import SponsorBanner from "./SponsorBanner";
 
 export default function Footer() {
   return (
-    <footer className="bg-blue-700 text-white py-6 px-4 shadow-lg">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-
-        {/* Contacto */}
-        <div className="mb-4 md:mb-0 text-center md:text-left">
-          <p className="text-sm md:text-base">
-            📍 Calle Falsa 123, Ciudad, Argentina
+    <>
+      <SponsorBanner />
+      <footer className="bg-blue-700 text-white py-6 px-4 shadow-lg">
+        <div className="max-w-6xl mx-auto flex flex-col items-center">
+          
+          {/* Teléfono */}
+          <p className="text-sm md:text-base mb-2">
+            📞{" "}
+            <a href="tel:+5491164371277" className="underline hover:text-gray-300">
+              +54 9 11 6437-1277
+            </a>
           </p>
-          <p className="text-sm md:text-base">
-            📞 <a href="tel:+5491164371277" className="underline hover:text-gray-300">+54 9 11 6437-1277</a>
-          </p>
-        </div>
 
-        {/* Redes Sociales */}
-        <div className="flex gap-6 text-3xl">
-          <a
-            href="https://www.facebook.com/emanuel.gauna"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-400 hover:text-blue-200 transition-colors"
-          >
-            <FaFacebookF />
-          </a>
-          <a
-            href="https://www.instagram.com/lemagauna/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-pink-400 hover:text-pink-200 transition-colors"
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href="https://wa.me/5491164371277"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-green-400 hover:text-green-200 transition-colors"
-          >
-            <FaWhatsapp />
-          </a>
+          {/* Mensaje breve de auspicios */}
+          <div className="mt-4 text-center text-sm md:text-base bg-blue-800 py-3 px-4 rounded-lg shadow-inner">
+            🚀 Proyecto abierto a <span className="font-semibold">auspicios</span>. ¡Contactame para sumarte! 💪
+          </div>
         </div>
-
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }
