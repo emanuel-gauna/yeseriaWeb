@@ -13,6 +13,7 @@ export default function SponsorBanner() {
         <span className="text-gray-400">Loma Negra</span>, <span className="text-pink-300">Knauf</span>,{" "}
         <span className="text-red-400">Sinteplast</span>, <span className="text-orange-300">Tersuave</span>,{" "}
         <span className="text-indigo-300">Tarquini</span>, <span className="text-purple-300">Sika</span>,{" "}
+        <span className="text-indigo-300">Yeso Tuyango</span>, <span className="text-purple-300">Yeso Alpress</span>,{" "}
         <span className="text-teal-300">Weber</span> o <span className="text-gray-500">Holcim</span>, ¡me encantaría que te sumes! 💪
       </p>
     </div>
