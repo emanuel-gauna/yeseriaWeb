@@ -1,7 +1,6 @@
 // src/components/Home.jsx
 import React from "react";
 import { Helmet } from "react-helmet";
-import { FaWhatsapp } from "react-icons/fa";
 import FondoLogo from "./FondoLogo";
 import BigProjectsBanner from "./BigProyectBanner";
 
@@ -14,15 +13,22 @@ export default function Home() {
 
       {/* SEO */}
       <Helmet>
-        <title>Yesería, Albañilería y Remodelaciones | Emanuel Gauna - Buenos Aires</title>
+        <title>Yesero, Pintor, Albañil y Microcemento | Emanuel Gauna - Buenos Aires</title>
         <meta
           name="description"
-          content="Servicios de yesería, albañilería, revoques, pisos, colocación de cerámicas, pintura interior y exterior, refacciones y remodelaciones generales en Buenos Aires y AMBA. Contacto: Emanuel Gauna."
+          content="Emanuel Gauna ofrece servicios de yesería, pintura, albañilería y microcemento en Buenos Aires y AMBA. Refacciones, remodelaciones, pisos, revestimientos y trabajos profesionales. Contacto: 11 6437-1277."
         />
         <meta
           name="keywords"
-          content="yesería, albañilería, remodelaciones, refacciones, cielorrasos, buñas, molduras, revoques, pintura, pisos, cerámicas, microcemento, revestimientos plásticos, presupuestos, obras grandes, casas, barrios privados, Buenos Aires, AMBA"
+          content="yesero, pintor, albañil, microcemento, yesería, albañilería, remodelaciones, refacciones, cielorrasos, buñas, molduras, revoques, pintura, pisos, cerámicas, revestimientos plásticos, Buenos Aires, AMBA"
         />
+
+        {/* Open Graph para redes sociales */}
+        <meta property="og:title" content="Yesero, Pintor y Albañil | Emanuel Gauna - Buenos Aires" />
+        <meta property="og:description" content="Servicios de yesería, pintura, albañilería y microcemento. Refacciones y remodelaciones profesionales en Buenos Aires y AMBA. Contacto: 11 6437-1277." />
+        <meta property="og:image" content="/logoyeso.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yeseria-web.vercel.app/" />
       </Helmet>
 
       {/* Header principal */}
@@ -46,7 +52,9 @@ export default function Home() {
 
       {/* Servicios destacados */}
       <section className="text-center max-w-3xl relative z-10 mb-12">
-        <h2 className="text-2xl md:text-3xl font-bold text-blue-700 mb-6">Nuestros Servicios</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-blue-700 mb-6">
+          Servicios de Yesería, Albañilería y Pintura
+        </h2>
         <p className="text-gray-700 mb-4">
           <strong>Yesería:</strong> Aplicado de yeso en paredes y techos, armado de cielorrasos, buñas, molduras y refacciones en general.
         </p>
