@@ -4,52 +4,62 @@
   <!-- Página de inicio -->
   <url>
     <loc>https://yeseria-web.vercel.app/</loc>
+    <lastmod>2025-08-23</lastmod>
     <priority>1.0</priority>
   </url>
 
   <!-- Secciones del sitio -->
   <url>
     <loc>https://yeseria-web.vercel.app/cielorrasos</loc>
+    <lastmod>2025-08-23</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://yeseria-web.vercel.app/paredes</loc>
+    <lastmod>2025-08-23</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://yeseria-web.vercel.app/molduras</loc>
+    <lastmod>2025-08-23</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://yeseria-web.vercel.app/mamposteria</loc>
+    <lastmod>2025-08-23</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://yeseria-web.vercel.app/microcemento</loc>
+    <lastmod>2025-08-23</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://yeseria-web.vercel.app/revestimientos</loc>
+    <lastmod>2025-08-23</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://yeseria-web.vercel.app/pintura-interior</loc>
+    <lastmod>2025-08-23</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://yeseria-web.vercel.app/pintura-exterior</loc>
+    <lastmod>2025-08-23</lastmod>
     <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://yeseria-web.vercel.app/pintura-refacciones</loc>
+    <lastmod>2025-08-23</lastmod>
     <priority>0.8</priority>
   </url>
 
