@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Página de inicio -->
+  <url>
+    <loc>https://yeseria-web.vercel.app/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Sección de Servicios (si agregás enlaces directos más adelante, agregalos aquí) -->
+  <!-- Ejemplo:
+  <url>
+    <loc>https://yeseria-web.vercel.app/servicios</loc>
+    <priority>0.8</priority>
+  </url>
+  -->
+
+</urlset>
