@@ -2,6 +2,7 @@
 import React from "react";
 import StickyButtons from "../StickyButtons";
 import FondoLogo from "../FondoLogo";
+import Footer from "../Footer";
 
 export default function Paredes() {
   const images = [
@@ -23,11 +24,11 @@ export default function Paredes() {
         Aplicado y Refacción de Paredes
       </h2>
 
-      {/* Descripción */}
+      {/* Descripción mejorada */}
       <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto relative z-10">
-        Realizamos <strong>aplicado de yeso en paredes</strong> de todo tipo de ambientes, asegurando un acabado liso y profesional. 
-        También ofrecemos <strong>refacciones de paredes existentes</strong> para reparar imperfecciones, grietas o daños, 
-        garantizando resultados duraderos y estéticamente impecables. Más de 15 años de experiencia en Buenos Aires y AMBA.
+        Realizamos <strong>aplicado de yeso en paredes</strong> de todo tipo de ambientes, tanto interiores como exteriores, asegurando un acabado liso, uniforme y profesional. 
+        También ofrecemos <strong>refacciones y reparación de paredes existentes</strong>, corrigiendo imperfecciones, grietas y daños estructurales, con resultados duraderos y estéticamente impecables. 
+        Más de 15 años de experiencia en remodelaciones y trabajos de interiorismo en Buenos Aires y AMBA.
       </p>
 
       {/* Grilla de imágenes */}
@@ -44,6 +45,7 @@ export default function Paredes() {
       </div>
 
       <StickyButtons />
+      <Footer />
     </section>
   );
 }

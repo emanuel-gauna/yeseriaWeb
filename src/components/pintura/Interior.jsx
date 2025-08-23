@@ -2,6 +2,7 @@
 import React from "react";
 import StickyButtons from "../StickyButtons";
 import FondoLogo from "../FondoLogo";
+import Footer from "../Footer";
 
 export default function Interior() {
   const images = [
@@ -18,19 +19,25 @@ export default function Interior() {
       {/* Fondo detrás del contenido */}
       <FondoLogo opacity={10} size="180px" />
 
+      {/* Título principal */}
       <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
-        Pintura Interior
+        Pintura Interior Profesional
       </h2>
+
+      {/* Descripción detallada */}
       <p className="text-gray-700 mb-6 text-center max-w-2xl mx-auto relative z-10">
-        Realizamos pintura de paredes, cielorrasos y detalles internos de tu hogar con acabado profesional y duradero.
+        Ejecutamos <strong>pintura interior de paredes, cielorrasos y detalles decorativos</strong> con acabados de alta calidad y durabilidad. 
+        Utilizamos técnicas profesionales que aseguran superficies lisas, uniformes y estéticamente impecables. 
+        Ideal para casas, departamentos y oficinas en Buenos Aires y AMBA.
       </p>
 
+      {/* Galería de imágenes */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 relative z-10">
         {images.map((src, idx) => (
           <div key={idx} className="overflow-hidden rounded-lg shadow-lg">
             <img
               src={src}
-              alt={`Interior ${idx + 1}`}
+              alt={`Pintura interior ${idx + 1}`}
               className="w-full h-64 object-cover hover:scale-105 transition-transform"
             />
           </div>
@@ -38,6 +45,7 @@ export default function Interior() {
       </div>
 
       <StickyButtons />
+      <Footer />
     </section>
   );
 }
