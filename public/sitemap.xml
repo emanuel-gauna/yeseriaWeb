@@ -7,12 +7,50 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Sección de Servicios (si agregás enlaces directos más adelante, agregalos aquí) -->
-  <!-- Ejemplo:
+  <!-- Secciones del sitio -->
   <url>
-    <loc>https://yeseria-web.vercel.app/servicios</loc>
+    <loc>https://yeseria-web.vercel.app/cielorrasos</loc>
     <priority>0.8</priority>
   </url>
-  -->
+
+  <url>
+    <loc>https://yeseria-web.vercel.app/paredes</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://yeseria-web.vercel.app/molduras</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://yeseria-web.vercel.app/mamposteria</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://yeseria-web.vercel.app/microcemento</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://yeseria-web.vercel.app/revestimientos</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://yeseria-web.vercel.app/pintura-interior</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://yeseria-web.vercel.app/pintura-exterior</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://yeseria-web.vercel.app/pintura-refacciones</loc>
+    <priority>0.8</priority>
+  </url>
 
 </urlset>
