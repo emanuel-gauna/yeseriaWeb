@@ -57,7 +57,6 @@ export default function Molduras() {
       </div>
 
       <StickyButtons />
-      <Footer />
     </section>
   );
 }

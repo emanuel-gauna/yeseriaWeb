@@ -4,6 +4,8 @@ import StickyButtons from "../StickyButtons";
 import FondoLogo from "../FondoLogo";
 import Footer from "../Footer";
 
+
+
 export default function Mamposteria() {
   const images = [
     "/albaImg/mamposteria1.jpg",
@@ -30,7 +32,7 @@ export default function Mamposteria() {
         Realizamos trabajos con <strong>ladrillos, bloques y materiales mixtos</strong> garantizando seguridad, durabilidad y acabados de alta calidad. 
         Más de 15 años de experiencia en proyectos residenciales, comerciales y refacciones en Buenos Aires y AMBA.
       </p>
-
+       
       {/* Grilla de imágenes */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 relative z-10">
         {images.map((src, idx) => (
@@ -45,7 +47,6 @@ export default function Mamposteria() {
       </div>
 
       <StickyButtons />
-      <Footer />
     </section>
   );
 }

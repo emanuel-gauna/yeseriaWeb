@@ -45,7 +45,6 @@ export default function Paredes() {
       </div>
 
       <StickyButtons />
-      <Footer />
     </section>
   );
 }

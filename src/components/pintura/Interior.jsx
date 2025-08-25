@@ -45,7 +45,7 @@ export default function Interior() {
       </div>
 
       <StickyButtons />
-      <Footer />
+
     </section>
   );
 }

@@ -45,7 +45,6 @@ export default function Microcemento() {
       </div>
 
       <StickyButtons />
-      <Footer />
     </section>
   );
 }

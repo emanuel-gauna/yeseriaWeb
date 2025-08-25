@@ -44,7 +44,6 @@ export default function Exterior() {
       </div>
 
       <StickyButtons />
-      <Footer />
     </section>
   );
 }

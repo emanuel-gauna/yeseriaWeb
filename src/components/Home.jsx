@@ -1,10 +1,25 @@
 // src/components/Home.jsx
-import React from "react";
+import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
 import FondoLogo from "./FondoLogo";
 import BigProjectsBanner from "./BigProyectBanner";
 
 export default function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Revisar si venimos con intención de scroll
+    if (location.state && location.state.scrollTo === "contact-section") {
+      const section = document.getElementById("contact-section");
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+      // Limpiar el state para que no haga scroll de nuevo al navegar
+      window.history.replaceState({}, document.title);
+    }
+  }, [location]);
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center p-6 bg-gray-50">
 

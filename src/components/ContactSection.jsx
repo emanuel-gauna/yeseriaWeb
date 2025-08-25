@@ -5,8 +5,8 @@ import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa";
 
 export default function ContactSection() {
   return (
-    <section className="bg-gray-100 py-12 px-6 relative z-20">
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-12">
+    <section id="contact-section" className="bg-gray-100 py-12 px-6 relative z-20">
+      <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-12 ">
 
         {/* Formulario */}
         <div className="md:w-2/3">

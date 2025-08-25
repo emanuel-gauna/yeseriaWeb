@@ -45,7 +45,6 @@ export default function Revestimientos() {
       </div>
 
       <StickyButtons />
-      <Footer />
     </section>
   );
 }
