@@ -48,8 +48,8 @@ export default function Home() {
 
       {/* Header principal */}
       <header className="text-center mb-12 relative z-10">
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-700 mb-4">
-          Yesería e Interiores Gauna Hnos
+        <h1 className="text-4xl md:text-5xl font-bold text-red-700 mb-4">
+          Yesería e Interiores Gauna Hnos Ivi Vamos River Plate
         </h1>
         <p className="text-gray-700 text-lg md:text-xl">
           Enlucidos, enduido, pintura profesional y remodelaciones en Buenos Aires y AMBA
