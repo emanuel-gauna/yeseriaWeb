@@ -25,6 +25,10 @@ import Interior from "./components/pintura/Interior";
 import Exterior from "./components/pintura/Exterior";
 import Refacciones from "./components/pintura/Refacciones";
 
+//Acerca de nosotros
+import Acerca from "./components/Acerca";
+
+
 // Fondo con logo
 import FondoLogo from "./components/FondoLogo";
 
@@ -216,6 +220,27 @@ function App() {
             </div>
           }
         />
+        <Route
+  path="/acerca-de-nosotros"
+  element={
+    <div className="relative">
+      <Helmet>
+        <title>Acerca de Emanuel Gauna | Yesero, Pintor y Albañil</title>
+        <meta
+          name="description"
+          content="Conoce a Emanuel Gauna, yesero, pintor y albañil profesional con experiencia en microcemento, remodelaciones y trabajos de calidad en Buenos Aires y AMBA."
+        />
+        <meta
+          name="keywords"
+          content="yesero, pintor, albañil, microcemento, remodelaciones, pintura, Buenos Aires, AMBA"
+        />
+      </Helmet>
+      <FondoLogo opacity={10} size="180px" />
+      <Acerca />
+    </div>
+  }
+/>
+
       </Routes>
       <ContactSection />
       <Footer />
