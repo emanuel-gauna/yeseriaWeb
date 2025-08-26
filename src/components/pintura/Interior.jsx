@@ -1,8 +1,7 @@
 // src/components/pintura/Interior.jsx
 import React from "react";
-import StickyButtons from "../StickyButtons";
+import { Helmet } from "react-helmet";
 import FondoLogo from "../FondoLogo";
-import Footer from "../Footer";
 
 export default function Interior() {
   const images = [
@@ -16,15 +15,36 @@ export default function Interior() {
 
   return (
     <section className="relative py-12 px-6 bg-gray-100 min-h-screen">
-      {/* Fondo detrás del contenido */}
+
+      {/* SEO */}
+      <Helmet>
+        <title>Pintura Interior Profesional | Emanuel Gauna</title>
+        <meta
+          name="description"
+          content="Servicios profesionales de pintura interior para paredes, cielorrasos y detalles decorativos. Acabados lisos, uniformes y duraderos en Buenos Aires y AMBA."
+        />
+        <meta name="keywords" content="pintura interior, cielorrasos, decoración, acabado profesional, Buenos Aires, AMBA" />
+        <meta property="og:title" content="Pintura Interior Profesional | Emanuel Gauna" />
+        <meta property="og:description" content="Aplicación profesional de pintura interior para casas, departamentos y oficinas en Buenos Aires y AMBA." />
+        <meta property="og:image" content="/pinturaImg/interior1.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yeseria-web.vercel.app/pintura-interior" />
+        <meta name="robots" content="index, follow" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Pintura Interior Profesional | Emanuel Gauna" />
+        <meta name="twitter:description" content="Aplicación profesional de pintura interior para casas, departamentos y oficinas en Buenos Aires y AMBA." />
+        <meta name="twitter:image" content="/pinturaImg/interior1.jpg" />
+      </Helmet>
+
+      {/* Fondo */}
       <FondoLogo opacity={10} size="180px" />
 
-      {/* Título principal */}
+      {/* Título y descripción */}
       <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
         Pintura Interior Profesional
       </h2>
-
-      {/* Descripción detallada */}
       <p className="text-gray-700 mb-6 text-center max-w-2xl mx-auto relative z-10">
         Ejecutamos <strong>pintura interior de paredes, cielorrasos y detalles decorativos</strong> con acabados de alta calidad y durabilidad. 
         Utilizamos técnicas profesionales que aseguran superficies lisas, uniformes y estéticamente impecables. 
@@ -37,15 +57,23 @@ export default function Interior() {
           <div key={idx} className="overflow-hidden rounded-lg shadow-lg">
             <img
               src={src}
-              alt={`Pintura interior ${idx + 1}`}
-              className="w-full h-64 object-cover hover:scale-105 transition-transform"
+              alt={`Proyecto de pintura interior ${idx + 1}`}
+              className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
+              loading="lazy"
             />
           </div>
         ))}
       </div>
 
-      <StickyButtons />
-
+      {/* CTA para contacto */}
+      <div className="text-center mt-8 relative z-10">
+        <a
+          href="#contact-section"
+          className="bg-blue-700 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-800 transition"
+        >
+          Solicitar Presupuesto
+        </a>
+      </div>
     </section>
   );
 }

@@ -1,8 +1,8 @@
+// src/components/Yeseria/Cielorrasos.jsx
 import React from "react";
 import { Helmet } from "react-helmet";
-import StickyButtons from "../StickyButtons";
+
 import FondoLogo from "../FondoLogo";
-import Footer from "../Footer";
 
 export default function Cielorrasos() {
   const images = [
@@ -16,8 +16,8 @@ export default function Cielorrasos() {
 
   return (
     <section className="py-12 px-6 bg-gray-100 min-h-screen relative">
-      
-      {/* SEO */}
+
+      {/* SEO mejorado */}
       <Helmet>
         <title>Cielorrasos y Molduras | Yesería Profesional - Emanuel Gauna</title>
         <meta
@@ -31,11 +31,18 @@ export default function Cielorrasos() {
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://yeseria-web.vercel.app/cielorrasos" />
         <meta name="robots" content="index, follow" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Cielorrasos Profesionales | Emanuel Gauna" />
+        <meta name="twitter:description" content="Instalación de cielorrasos y molduras. Servicio de yesería en Buenos Aires y AMBA." />
+        <meta name="twitter:image" content="/yesoImg/armado-trapecio.jpg" />
       </Helmet>
 
       {/* Fondo */}
-      <FondoLogo opacity={10} size="180px" />
+      <FondoLogo />
 
+      {/* Título y descripción */}
       <h2 className="text-3xl font-bold text-blue-700 mb-2 text-center relative z-10">
         Cielorrasos Armados
       </h2>
@@ -44,18 +51,30 @@ export default function Cielorrasos() {
         También realizamos <strong>refacciones de cielorrasos existentes</strong>, asegurando un acabado profesional y duradero. 
         Más de 15 años de experiencia en remodelaciones y trabajos de interiorismo en Buenos Aires y el AMBA.
       </p>
+
+      {/* Galería de imágenes */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 relative z-10">
         {images.map((src, idx) => (
           <div key={idx} className="overflow-hidden rounded-lg shadow-lg relative z-10">
             <img
               src={src}
-              alt={`Cielorraso ${idx + 1}`}
+              alt={`Cielorraso armado con buñas y molduras, proyecto ${idx + 1}`}
               className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
+              loading="lazy"
             />
           </div>
         ))}
       </div>
-      <StickyButtons />
+
+      {/* CTA para presupuesto */}
+      <div className="text-center mt-8 relative z-10">
+        <a
+          href="#contact-section"
+          className="bg-blue-700 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-800 transition"
+        >
+          Solicitar Presupuesto
+        </a>
+      </div>
     </section>
   );
 }

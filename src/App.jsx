@@ -50,6 +50,9 @@ function App() {
     <Router>
       <ScrollToTop />
       <Navbar />
+      <FondoLogo opacity={10} size="180px" />
+      <StickyButtons />
+
       <Routes>
         {/* Página principal */}
         <Route
