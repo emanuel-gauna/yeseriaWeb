@@ -64,7 +64,7 @@ export default function Home() {
         textColor="text-gray-800"
         shadow="shadow-md"
       />
-
+      
       {/* Servicios destacados */}
       <section className="text-center max-w-3xl relative z-10 mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-blue-700 mb-6">
