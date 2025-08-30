@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 import FondoLogo from "./FondoLogo";
 import BigProjectsBanner from "./BigProyectBanner";
+import VideosSection from "./videos/VideoSection";
 
 export default function Home() {
   const location = useLocation();
@@ -64,7 +65,7 @@ export default function Home() {
         textColor="text-gray-800"
         shadow="shadow-md"
       />
-      
+
       {/* Servicios destacados */}
       <section className="text-center max-w-3xl relative z-10 mb-12">
         <h2 className="text-2xl md:text-3xl font-bold text-blue-700 mb-6">
@@ -83,6 +84,7 @@ export default function Home() {
           Atendemos en la Ciudad de Buenos Aires y el AMBA. Contacto: <a href="tel:+541164371277" className="text-blue-600 underline">11 6437-1277</a>
         </p>
       </section>
+      <VideosSection />
 
     </section>
   );
