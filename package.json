@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postbuild": "react-snap"
+    "postbuild": "esbuild ./dist/**/*.js --target=es2018 --outdir=dist && react-snap"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",
@@ -30,6 +30,7 @@
     "@types/react": "^19.1.10",
     "@types/react-dom": "^19.1.7",
     "@vitejs/plugin-react": "^5.0.0",
+    "esbuild": "^0.25.9",
     "eslint": "^9.33.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
@@ -38,8 +39,23 @@
   },
   "reactSnap": {
     "inlineCss": true,
-    "puppeteerArgs": ["--no-sandbox"],
+    "puppeteerArgs": [
+      "--no-sandbox"
+    ],
     "source": "dist",
-    "include": ["/", "/cielorrasos", "/paredes", "/molduras", "/mamposteria", "/microcemento", "/revestimientos", "/pintura-interior", "/pintura-exterior", "/pintura-refacciones", "/acerca-de-nosotros"]
+    "include": [
+      "/",
+      "/cielorrasos",
+      "/paredes",
+      "/molduras",
+      "/mamposteria",
+      "/microcemento",
+      "/revestimientos",
+      "/pintura-interior",
+      "/pintura-exterior",
+      "/pintura-refacciones",
+      "/acerca-de-nosotros"
+    ]
   }
 }
+
