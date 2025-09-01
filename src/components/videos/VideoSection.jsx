@@ -17,11 +17,11 @@ export default function VideoSection() {
 
   const videos = [
     { type: "tiktok", src: "https://www.tiktok.com/embed/7539544687326137605" },
-    { type: "tiktok", src: "https://www.tiktok.com/embed/7526338348584094982"},
-    { type: "tiktok", src: "https://www.tiktok.com/embed/7526968549848534277"},
+    { type: "tiktok", src: "https://www.tiktok.com/embed/7526338348584094982" },
+    { type: "tiktok", src: "https://www.tiktok.com/embed/7526968549848534277" },
     { type: "instagram", src: "https://www.instagram.com/reel/DMu4FlBMdqn/embed" },
-    { type: "instagram", src: "https://www.instagram.com/reel/DNa-2z_ts2n/embed"},
-    { type: "instagram", src: "https://www.instagram.com/reel/DMREvoDMpck/embed"},
+    { type: "instagram", src: "https://www.instagram.com/reel/DNa-2z_ts2n/embed" },
+    { type: "instagram", src: "https://www.instagram.com/reel/DMREvoDMpck/embed" },
   ];
 
   // Función para abrir modal con autoplay
@@ -36,19 +36,26 @@ export default function VideoSection() {
   };
 
   return (
-    <section className="my-8">
-      <h2
-        className="text-xl md:text-2xl font-bold cursor-pointer flex items-center justify-between bg-gray-100 p-4 rounded-xl shadow-md hover:bg-gray-200 transition"
-        onClick={() => setOpen(!open)}
-      >
-        👉 Mirá algunos de nuestros trabajos en video
-        <span>{open ? "▲" : "▼"}</span>
-      </h2>
+    <section className="my-8 z-30">
+      {/* Botón con gradiente tipo Instagram */}
+    <h2
+  className="text-xl md:text-2xl font-bold cursor-pointer flex items-center justify-between 
+             p-4 rounded-xl shadow-md transition z-20 text-white
+             bg-gradient-to-r from-violet-500 via-red-500 to-yellow-500
+             hover:from-yellow-500 hover:via-red-500 hover:to-pink-500
+             hover:opacity-95"
+  onClick={() => setOpen(!open)}
+>
+  👉 Mirá algunos de nuestros trabajos en video
+  <span>{open ? "▲" : "▼"}</span>
+</h2>
+
 
       {open && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
           {videos.map((video, i) => {
-            const aspectClass = video.type === "tiktok" ? "aspect-[9/16]" : "aspect-square";
+            const aspectClass =
+              video.type === "tiktok" ? "aspect-[9/16]" : "aspect-square";
             return (
               <div
                 key={i}

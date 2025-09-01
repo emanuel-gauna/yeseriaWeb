@@ -57,9 +57,9 @@ export default function Navbar() {
         {/* Logo / Inicio */}
       <div className="flex items-center gap-2">
   <img
-    src="/logo.png"       // ruta a tu logo pequeño
+    src="/yesero.jpg"       // ruta a tu logo pequeño
     alt="Logo"
-    className="w-8 h-8 object-contain" // tamaño 32x32px
+    className="w-8 h-8 object-contain rounded-full" // tamaño 32x32px
   />
   <Link to="/" className="text-2xl font-bold hover:text-blue-300 transition">
     Inicio
