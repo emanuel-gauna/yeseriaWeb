@@ -3,7 +3,7 @@ import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 
 export default function ContactForm() {
-  const [state, handleSubmit] = useForm("xblkenrg"); // reemplaza "xblkenrg" con tu ID de Formspree si cambió
+  const [state, handleSubmit] = useForm("xblkenrg"); // reemplaza con tu ID de Formspree si cambió
 
   if (state.succeeded) {
     return (
@@ -14,7 +14,10 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-4 bg-white p-6 rounded-lg shadow-md text-gray-900"
+    >
       <label htmlFor="name" className="font-semibold">
         Nombre
       </label>
@@ -24,7 +27,7 @@ export default function ContactForm() {
         name="name"
         required
         placeholder="Tu nombre"
-        className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900"
       />
       <ValidationError prefix="Name" field="name" errors={state.errors} />
 
@@ -37,7 +40,7 @@ export default function ContactForm() {
         name="email"
         required
         placeholder="Tu email"
-        className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900"
       />
       <ValidationError prefix="Email" field="email" errors={state.errors} />
 
@@ -49,7 +52,7 @@ export default function ContactForm() {
         type="text"
         name="phone"
         placeholder="Ej: 11 1234-5678"
-        className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900"
       />
 
       <label htmlFor="message" className="font-semibold">
@@ -60,7 +63,7 @@ export default function ContactForm() {
         name="message"
         required
         placeholder="Contanos sobre tu proyecto, necesidades o consultas..."
-        className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        className="border border-gray-300 rounded p-2 focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-gray-900"
       />
       <ValidationError prefix="Message" field="message" errors={state.errors} />
 

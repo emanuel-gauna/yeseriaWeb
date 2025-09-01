@@ -52,19 +52,27 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-blue-100 p-4 sticky top-0 z-50 shadow-md">
+    <nav className="bg-blue-800 text-white p-4 sticky top-0 z-50 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo / Inicio */}
-        <div className="text-xl font-bold text-blue-700">
-          <Link to="/">Inicio</Link>
-        </div>
+      <div className="flex items-center gap-2">
+  <img
+    src="/logo.png"       // ruta a tu logo pequeño
+    alt="Logo"
+    className="w-8 h-8 object-contain" // tamaño 32x32px
+  />
+  <Link to="/" className="text-2xl font-bold hover:text-blue-300 transition">
+    Inicio
+  </Link>
+</div>
+
 
         {/* Botón móvil */}
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
             aria-label="Abrir menú"
-            className="text-blue-700 focus:outline-none text-2xl"
+            className="text-white focus:outline-none text-3xl"
           >
             ☰
           </button>
@@ -72,32 +80,30 @@ export default function Navbar() {
 
         {/* Menu */}
         <ul
-          className={`md:flex md:items-center md:gap-4 absolute md:static bg-blue-100 w-full md:w-auto left-0 md:left-auto transition-all duration-300 ${
+          className={`md:flex md:items-center md:gap-4 absolute md:static bg-blue-800 w-full md:w-auto left-0 md:left-auto transition-all duration-300 ${
             isOpen ? "top-16" : "top-[-500px]"
           }`}
         >
           {menuItems.map((item, idx) => {
             const isActive = item.path && location.pathname === item.path;
             return (
-              <li
-                key={idx}
-                className="relative md:mx-2 border-b md:border-none group"
-              >
+              <li key={idx} className="relative md:mx-2 group border-b md:border-none">
                 {item.sub.length > 0 ? (
                   <>
                     <button
-                      className="w-full text-left cursor-pointer px-4 py-2 hover:bg-blue-200 rounded flex justify-between items-center"
+                      className="w-full text-left px-4 py-2 hover:bg-blue-700 rounded flex justify-between items-center transition"
                       onClick={() => toggleSubmenu(item.label)}
                       aria-expanded={openSubmenu === item.label}
                     >
                       {item.label} ▾
                     </button>
-                    <ul className="hidden md:absolute md:top-full md:left-0 md:bg-blue-100 md:shadow-md md:rounded md:group-hover:block">
+                    {/* Submenu escritorio */}
+                    <ul className="hidden md:absolute md:top-full md:left-0 md:bg-blue-700 md:shadow-lg md:rounded md:group-hover:block">
                       {item.sub.map((sub, i) => (
                         <li key={i}>
                           <Link
                             to={sub.path}
-                            className="block px-4 py-2 hover:bg-blue-200 rounded"
+                            className="block px-4 py-2 hover:bg-blue-600 rounded transition"
                             onClick={() => setIsOpen(false)}
                           >
                             {sub.label}
@@ -105,13 +111,14 @@ export default function Navbar() {
                         </li>
                       ))}
                     </ul>
+                    {/* Submenu móvil */}
                     {openSubmenu === item.label && (
-                      <ul className="md:hidden bg-blue-100 w-full shadow-md rounded">
+                      <ul className="md:hidden bg-blue-700 w-full shadow-lg rounded">
                         {item.sub.map((sub, i) => (
                           <li key={i}>
                             <Link
                               to={sub.path}
-                              className="block px-6 py-2 hover:bg-blue-200 rounded"
+                              className="block px-6 py-2 hover:bg-blue-600 rounded transition"
                               onClick={() => setIsOpen(false)}
                             >
                               {sub.label}
@@ -124,15 +131,15 @@ export default function Navbar() {
                 ) : item.action ? (
                   <button
                     onClick={item.action}
-                    className="block w-full text-left px-4 py-2 hover:bg-blue-300 rounded md:rounded"
+                    className="block w-full text-left px-4 py-2 hover:bg-blue-600 rounded md:rounded transition"
                   >
                     {item.label}
                   </button>
                 ) : (
                   <Link
                     to={item.path}
-                    className={`block px-4 py-2 hover:bg-blue-200 rounded md:rounded ${
-                      isActive ? "text-blue-900 font-semibold" : ""
+                    className={`block px-4 py-2 hover:bg-blue-700 rounded md:rounded transition ${
+                      isActive ? "bg-blue-900 font-semibold" : ""
                     }`}
                     onClick={() => setIsOpen(false)}
                   >

@@ -2,11 +2,11 @@ import React from "react";
 
 export default function SponsorBanner() {
   return (
-    <div className="bg-gray-100 py-6 shadow-inner">
+    <div className="bg-gray-300 py-6 shadow-inner  relative z-20">
       <h3 className="text-center text-lg font-semibold text-gray-700 mb-4">
         Marcas Auspiciantes
       </h3>
-      <p className="text-center text-gray-700 max-w-3xl mx-auto">
+      <p className="text-center text-gray-700 max-w-3xl mx-auto ">
         🚀 Este proyecto está abierto a <span className="font-semibold">colaboraciones y auspicios</span>. 
         Si sos una marca de materiales como <span className="text-yellow-300">Durlock</span>,{" "}
         <span className="text-blue-200">Saint-Gobain</span>, <span className="text-green-300">Mapei</span>,{" "}

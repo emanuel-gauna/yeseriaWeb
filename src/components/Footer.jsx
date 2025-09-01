@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <>
       <SponsorBanner />
-      <footer className="bg-blue-700 text-white py-6 px-4 shadow-lg">
+      <footer className="bg-blue-700 text-white py-6 px-4 shadow-lg relative z-20">
         <div className="max-w-6xl mx-auto flex flex-col items-center">
           
           {/* Teléfono */}
