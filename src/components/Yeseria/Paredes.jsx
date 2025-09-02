@@ -55,7 +55,7 @@ export default function Paredes() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 relative z-10">
         {images.map((src, idx) => (
           <div key={idx} className="overflow-hidden rounded-lg shadow-lg">
-            <div className="relative w-full aspect-[4/3]">
+            <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
     <img
       src={src}
       alt={`Proyecto de Paredes com Yeso ${idx + 1}`}
