@@ -48,6 +48,9 @@ export default function Acerca() {
             alt="Emanuel Gauna - Yesero, Pintor y Albañil"
             className="w-40 h-40 rounded-full object-cover shadow-md mb-4"
             loading="lazy"
+            width="1200"
+            height="900"
+
           />
 
           {/* QR code */}
