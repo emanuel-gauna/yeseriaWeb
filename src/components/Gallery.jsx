@@ -1,7 +1,6 @@
-// src/components/Gallery.jsx
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper"; // Swiper 8
+import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -22,25 +21,48 @@ export default function Gallery() {
           }}
         >
           <SwiperSlide>
-            <a href="/cielorrasos" className="relative block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
-              <img src="/yesoImg/armado-trapecio.jpg" alt="Cielorrasos Armados" className="w-full h-48 object-cover" />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
+            <a href="/cielorrasos" className="block rounded-lg shadow-lg overflow-hidden">
+              <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
+                <img
+                  src="/yesoImg/armado-trapecio.jpg"
+                  alt="Cielorrasos armados con yeso y detalles decorativos"
+                  className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
                 Cielorrasos
               </div>
             </a>
           </SwiperSlide>
+
           <SwiperSlide>
-            <a href="/paredes" className="relative block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
-              <img src="/yesoImg/monoambiente2.jpg" alt="Aplicado de Paredes" className="w-full h-48 object-cover" />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
+            <a href="/paredes" className="block rounded-lg shadow-lg overflow-hidden">
+              <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
+                <img
+                  src="/yesoImg/monoambiente2.jpg"
+                  alt="Aplicación de paredes con yeso en monoambiente"
+                  className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
                 Paredes
               </div>
             </a>
           </SwiperSlide>
+
           <SwiperSlide>
-            <a href="/molduras" className="relative block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
-              <img src="/yesoImg/moldura1.jpg" alt="Buñas y Molduras" className="w-full h-48 object-cover" />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
+            <a href="/molduras" className="block rounded-lg shadow-lg overflow-hidden">
+              <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
+                <img
+                  src="/yesoImg/moldura1.jpg"
+                  alt="Buñas y molduras decorativas en yeso"
+                  className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
                 Molduras
               </div>
             </a>
@@ -62,25 +84,48 @@ export default function Gallery() {
           }}
         >
           <SwiperSlide>
-            <a href="/mamposteria" className="relative block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
-              <img src="/albaImg/mamposteria1.jpg" alt="Mampostería" className="w-full h-48 object-cover" />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
+            <a href="/mamposteria" className="block rounded-lg shadow-lg overflow-hidden">
+              <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
+                <img
+                  src="/albaImg/mamposteria1.jpg"
+                  alt="Trabajo de mampostería con ladrillos y construcción de muros"
+                  className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
                 Mampostería
               </div>
             </a>
           </SwiperSlide>
+
           <SwiperSlide>
-            <a href="/microcemento" className="relative block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
-              <img src="/albaImg/microcemento1.jpg" alt="Microcemento" className="w-full h-48 object-cover" />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
+            <a href="/microcemento" className="block rounded-lg shadow-lg overflow-hidden">
+              <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
+                <img
+                  src="/albaImg/microcemento1.jpg"
+                  alt="Aplicación de microcemento en pisos y paredes"
+                  className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
                 Microcemento
               </div>
             </a>
           </SwiperSlide>
+
           <SwiperSlide>
-            <a href="/revestimientos" className="relative block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
-              <img src="/albaImg/revestimientos1.jpg" alt="Revestimientos y Pisos" className="w-full h-48 object-cover" />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
+            <a href="/revestimientos" className="block rounded-lg shadow-lg overflow-hidden">
+              <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
+                <img
+                  src="/albaImg/revestimientos1.jpg"
+                  alt="Revestimientos y pisos decorativos para interiores"
+                  className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
                 Revestimientos y Pisos
               </div>
             </a>
@@ -102,25 +147,48 @@ export default function Gallery() {
           }}
         >
           <SwiperSlide>
-            <a href="/pintura-interior" className="relative block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
-              <img src="/pinturaImg/interior1.jpg" alt="Pintura Interior" className="w-full h-48 object-cover" />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
+            <a href="/pintura-interior" className="block rounded-lg shadow-lg overflow-hidden">
+              <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
+                <img
+                  src="/pinturaImg/interior1.jpg"
+                  alt="Pintura interior de habitaciones con colores decorativos"
+                  className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
                 Pintura Interior
               </div>
             </a>
           </SwiperSlide>
+
           <SwiperSlide>
-            <a href="/pintura-exterior" className="relative block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
-              <img src="/pinturaImg/exterior1.jpg" alt="Pintura Exterior" className="w-full h-48 object-cover" />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
+            <a href="/pintura-exterior" className="block rounded-lg shadow-lg overflow-hidden">
+              <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
+                <img
+                  src="/pinturaImg/exterior1.jpg"
+                  alt="Pintura exterior de fachadas y muros"
+                  className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
                 Pintura Exterior
               </div>
             </a>
           </SwiperSlide>
+
           <SwiperSlide>
-            <a href="/pintura-refacciones" className="relative block overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform">
-              <img src="/pinturaImg/refaccion1.jpg" alt="Refacciones y Restauraciones" className="w-full h-48 object-cover" />
-              <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
+            <a href="/pintura-refacciones" className="block rounded-lg shadow-lg overflow-hidden">
+              <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
+                <img
+                  src="/pinturaImg/refaccion1.jpg"
+                  alt="Refacciones y restauraciones con pintura profesional"
+                  className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+              </div>
+              <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
                 Refacciones / Restauraciones
               </div>
             </a>

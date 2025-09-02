@@ -28,6 +28,7 @@ import Refacciones from "./components/pintura/Refacciones";
 //Acerca de nosotros
 import Acerca from "./components/Acerca";
 
+import NotFound from "./components/NotFound";
 
 // Fondo con logo
 import FondoLogo from "./components/FondoLogo";
@@ -243,7 +244,7 @@ function App() {
     </div>
   }
 />
-
+<Route path="*" element={<NotFound />} /> 
       </Routes>
       <ContactSection />
       <Footer />

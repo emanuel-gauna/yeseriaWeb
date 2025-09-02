@@ -31,7 +31,6 @@ export default function Mamposteria() {
         <meta property="og:url" content="https://yeseria-web.vercel.app/mamposteria" />
         <meta name="robots" content="index, follow" />
 
-        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Mampostería Profesional | Emanuel Gauna" />
         <meta name="twitter:description" content="Construcción y refacción de muros, tabiques y paredes con acabados de alta calidad en Buenos Aires y AMBA." />
@@ -51,16 +50,18 @@ export default function Mamposteria() {
         Más de 15 años de experiencia en proyectos residenciales, comerciales y refacciones en Buenos Aires y AMBA.
       </p>
 
-      {/* Galería de imágenes */}
+      {/* Galería de imágenes adaptativa */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 relative z-10">
         {images.map((src, idx) => (
-          <div key={idx} className="overflow-hidden rounded-lg shadow-lg">
-            <img
-              src={src}
-              alt={`Mampostería proyecto ${idx + 1}`}
-              className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
+          <div key={idx} className="overflow-hidden rounded-lg shadow-lg w-full">
+            <div className="relative w-full aspect-[4/3]">
+              <img
+                src={src}
+                alt={`Mampostería proyecto ${idx + 1}`}
+                className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
           </div>
         ))}
       </div>

@@ -56,12 +56,14 @@ export default function Cielorrasos() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 relative z-10">
         {images.map((src, idx) => (
           <div key={idx} className="overflow-hidden rounded-lg shadow-lg relative z-10">
-            <img
-              src={src}
-              alt={`Cielorraso armado con buñas y molduras, proyecto ${idx + 1}`}
-              className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
-              loading="lazy"
-            />
+           <div className="relative w-full aspect-[4/3]">
+    <img
+      src={src}
+      alt={`Proyecto de Cielorrasos${idx + 1}`}
+      className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+      loading="lazy"
+    />
+  </div>
           </div>
         ))}
       </div>
