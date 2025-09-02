@@ -61,6 +61,8 @@ export default function Refacciones() {
       alt={`Proyecto de refacciones ${idx + 1}`}
       className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
       loading="lazy"
+      width="1200"
+      height="900"
     />
   </div>
           </div>

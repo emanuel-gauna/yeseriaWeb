@@ -28,6 +28,8 @@ export default function Gallery() {
                   alt="Cielorrasos armados con yeso y detalles decorativos"
                   className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width="1200"
+                  height="900"
                 />
               </div>
               <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
@@ -44,6 +46,8 @@ export default function Gallery() {
                   alt="Aplicación de paredes con yeso en monoambiente"
                   className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width="1200"
+                  height="900"
                 />
               </div>
               <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
@@ -60,6 +64,8 @@ export default function Gallery() {
                   alt="Buñas y molduras decorativas en yeso"
                   className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width="1200"
+                  height="900"
                 />
               </div>
               <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
@@ -91,6 +97,8 @@ export default function Gallery() {
                   alt="Trabajo de mampostería con ladrillos y construcción de muros"
                   className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width="1200"
+                  height="900"
                 />
               </div>
               <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
@@ -107,6 +115,8 @@ export default function Gallery() {
                   alt="Aplicación de microcemento en pisos y paredes"
                   className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width="1200"
+                  height="900"
                 />
               </div>
               <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
@@ -123,6 +133,8 @@ export default function Gallery() {
                   alt="Revestimientos y pisos decorativos para interiores"
                   className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width="1200"
+                  height="900"
                 />
               </div>
               <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
@@ -154,6 +166,8 @@ export default function Gallery() {
                   alt="Pintura interior de habitaciones con colores decorativos"
                   className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width="1200"
+                  height="900"
                 />
               </div>
               <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
@@ -170,6 +184,8 @@ export default function Gallery() {
                   alt="Pintura exterior de fachadas y muros"
                   className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width="1200"
+                  height="900"
                 />
               </div>
               <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">
@@ -186,6 +202,8 @@ export default function Gallery() {
                   alt="Refacciones y restauraciones con pintura profesional"
                   className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                   loading="lazy"
+                  width="1200"
+                  height="900"
                 />
               </div>
               <div className="bg-black bg-opacity-50 text-white text-center py-2 font-semibold">

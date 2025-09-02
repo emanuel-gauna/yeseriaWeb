@@ -61,6 +61,8 @@ export default function Microcemento() {
               alt={`Proyecto de microcemento ${idx + 1}`}
               className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
               loading="lazy"
+              width="1200"
+              height="900"
             />
             </div>
           </div>
