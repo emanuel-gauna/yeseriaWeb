@@ -32,7 +32,7 @@ export default function Home() {
         <title>Yesero, Pintor, Albañil y Microcemento | Emanuel Gauna - Buenos Aires</title>
         <meta
           name="description"
-          content="Emanuel Gauna ofrece servicios de yesería, pintura, albañilería y microcemento en Buenos Aires y AMBA. Refacciones, remodelaciones, pisos, revestimientos y trabajos profesionales. Contacto: 11 6437-1277."
+          content="Ofrecemos servicios de yesería, pintura, albañilería y microcemento en Buenos Aires y AMBA. Refacciones, remodelaciones, pisos y  revestimientos. Contacto: 11 6437-1277."
         />
         <meta
           name="keywords"
