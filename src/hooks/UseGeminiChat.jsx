@@ -1,8 +1,16 @@
 import { useState } from "react";
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { GoogleGenAI } from "@google/genai";
 
-const API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
-const genAI = new GoogleGenerativeAI(API_KEY);
+const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
+
+// La clave de API se pasa directamente a la inicialización del cliente
+let ai;
+if (GEMINI_API_KEY) {
+  ai = new GoogleGenAI({ apiKey: GEMINI_API_KEY });
+} else {
+  // Manejamos el caso en que la clave no esté configurada
+  console.error("Error: La clave de la API de Gemini no está configurada.");
+}
 
 export function useGeminiChat() {
   const [chatHistory, setChatHistory] = useState([]);
@@ -18,7 +26,15 @@ export function useGeminiChat() {
 
   // Función para enviar el mensaje y gestionar el historial
   const handleSendMessage = async (prompt) => {
-    if (!prompt) return;
+    // Si la clave de API no existe, no hacemos la llamada
+    if (!prompt || !ai) {
+      setChatHistory([
+        ...chatHistory,
+        { role: "model", parts: [{ text: "Error: La clave de la API de Gemini no está configurada. Por favor, revisa el archivo .env.local y reinicia el servidor." }] }
+      ]);
+      setLoading(false);
+      return;
+    }
     setLoading(true);
 
     const newChatHistory = [
@@ -28,7 +44,7 @@ export function useGeminiChat() {
     setChatHistory(newChatHistory);
 
     try {
-      const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+      const model = ai.getGenerativeModel({ model: 'gemini-1.5-flash' });
       const chat = model.startChat({ history: [systemInstruction] });
       const result = await chat.sendMessage(prompt);
       const text = result.response.text();
@@ -47,6 +63,5 @@ export function useGeminiChat() {
     }
   };
 
-  // El hook retorna el historial, el estado de carga y la función para enviar mensajes
   return { chatHistory, loading, handleSendMessage };
 }
