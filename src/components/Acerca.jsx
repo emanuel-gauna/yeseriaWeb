@@ -1,24 +1,9 @@
-// src/components/Acerca.jsx
 import React from "react";
-import { Helmet } from "react-helmet";
 import { QRCodeCanvas } from "qrcode.react";
 
 export default function Acerca() {
   return (
     <section className="relative min-h-screen p-6 bg-transparent flex flex-col items-center justify-center">
-
-      {/* SEO */}
-      <Helmet>
-        <title>Acerca de Emanuel Gauna | Yesero, Pintor y Albañil Profesional</title>
-        <meta
-          name="description"
-          content="Emanuel Gauna ofrece servicios profesionales de yesería, pintura y albañilería, especializado en microcemento y remodelaciones en Buenos Aires y AMBA. Garantía de calidad y atención personalizada."
-        />
-        <meta
-          name="keywords"
-          content="yesero, pintor, albañil, microcemento, remodelaciones, yesería, pintura, revestimientos, Buenos Aires, AMBA"
-        />
-      </Helmet>
 
       {/* Título */}
       <h1 className="text-4xl font-bold text-blue-700 mb-6 text-center z-10 relative">
@@ -38,7 +23,6 @@ export default function Acerca() {
 
       {/* Foto y QR en recuadro más pequeño */}
       <div className="relative mt-8 flex flex-col items-center z-10">
-
         {/* Contenedor del contenido más compacto */}
         <div className="relative z-20 flex flex-col items-center bg-white bg-opacity-90 p-6 rounded-2xl shadow-lg text-center w-full max-w-md">
 
@@ -50,7 +34,6 @@ export default function Acerca() {
             loading="lazy"
             width="1200"
             height="900"
-
           />
 
           {/* QR code */}

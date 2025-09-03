@@ -6,10 +6,10 @@ import "swiper/css/navigation";
 
 export default function Gallery() {
   return (
-    <section className="py-12 px-6 bg-gray-100">
+    <section className="py-12 px-6 bg-gray-100 dark:bg-gray-800 transition-colors duration-300">
       {/* Yesería */}
       <div className="mb-12">
-        <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center">Yesería</h2>
+        <h2 className="text-3xl font-bold text-blue-700 dark:text-blue-400 mb-6 text-center">Yesería</h2>
         <Swiper
           navigation={true}
           modules={[Navigation]}
@@ -78,7 +78,7 @@ export default function Gallery() {
 
       {/* Albañilería */}
       <div className="mb-12">
-        <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center">Albañilería</h2>
+        <h2 className="text-3xl font-bold text-blue-700 dark:text-blue-400 mb-6 text-center">Albañilería</h2>
         <Swiper
           navigation={true}
           modules={[Navigation]}
@@ -147,7 +147,7 @@ export default function Gallery() {
 
       {/* Pintura */}
       <div className="mb-12">
-        <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center">Pintura</h2>
+        <h2 className="text-3xl font-bold text-blue-700 dark:text-blue-400 mb-6 text-center">Pintura</h2>
         <Swiper
           navigation={true}
           modules={[Navigation]}

@@ -1,6 +1,4 @@
-// src/components/albañileria/Mamposteria.jsx
 import React from "react";
-import { Helmet } from "react-helmet";
 import FondoLogo from "../FondoLogo";
 
 export default function Mamposteria() {
@@ -15,28 +13,6 @@ export default function Mamposteria() {
 
   return (
     <section className="relative py-12 px-6 bg-gray-100 min-h-screen">
-
-      {/* SEO */}
-      <Helmet>
-        <title>Mampostería Profesional | Emanuel Gauna</title>
-        <meta
-          name="description"
-          content="Servicios de mampostería profesional: construcción y refacción de muros, tabiques y paredes en Buenos Aires y AMBA. Contacto: 11 6437-1277."
-        />
-        <meta name="keywords" content="mampostería, construcción, refacción, muros, tabiques, ladrillos, bloques, Buenos Aires, AMBA" />
-        <meta property="og:title" content="Mampostería Profesional | Emanuel Gauna" />
-        <meta property="og:description" content="Construcción y refacción de muros, tabiques y paredes con acabados de alta calidad en Buenos Aires y AMBA." />
-        <meta property="og:image" content="/albaImg/mamposteria1.jpg" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yeseria-web.vercel.app/mamposteria" />
-        <meta name="robots" content="index, follow" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Mampostería Profesional | Emanuel Gauna" />
-        <meta name="twitter:description" content="Construcción y refacción de muros, tabiques y paredes con acabados de alta calidad en Buenos Aires y AMBA." />
-        <meta name="twitter:image" content="/albaImg/mamposteria1.jpg" />
-      </Helmet>
-
       {/* Fondo */}
       <FondoLogo />
 
@@ -45,8 +21,8 @@ export default function Mamposteria() {
         Mampostería Profesional
       </h2>
       <p className="text-gray-700 text-center mb-8 max-w-3xl mx-auto relative z-10">
-        Nos especializamos en la <strong>construcción y refacción de muros, tabiques y paredes</strong>, tanto estructurales como divisorias. 
-        Trabajamos con <strong>ladrillos, bloques y materiales mixtos</strong> garantizando seguridad, durabilidad y acabados de alta calidad. 
+        Nos especializamos en la <strong>construcción y refacción de muros, tabiques y paredes</strong>, tanto estructurales como divisorias.
+        Trabajamos con <strong>ladrillos, bloques y materiales mixtos</strong> garantizando seguridad, durabilidad y acabados de alta calidad.
         Más de 15 años de experiencia en proyectos residenciales, comerciales y refacciones en Buenos Aires y AMBA.
       </p>
 
@@ -61,7 +37,7 @@ export default function Mamposteria() {
                 className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                 loading="lazy"
                 width="1200"
-                  height="900"
+                height="900"
               />
             </div>
           </div>

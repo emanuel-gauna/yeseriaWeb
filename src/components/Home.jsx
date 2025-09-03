@@ -1,51 +1,14 @@
-// src/components/Home.jsx
-import React, { useEffect } from "react";
-import { Helmet } from "react-helmet";
-import { useLocation } from "react-router-dom";
+import React from "react";
 import FondoLogo from "./FondoLogo";
 import BigProjectsBanner from "./BigProyectBanner";
 import VideosSection from "./videos/VideoSection";
 
 export default function Home() {
-  const location = useLocation();
-
-  useEffect(() => {
-    // Revisar si venimos con intención de scroll
-    if (location.state && location.state.scrollTo === "contact-section") {
-      const section = document.getElementById("contact-section");
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-      // Limpiar el state para que no haga scroll de nuevo al navegar
-      window.history.replaceState({}, document.title);
-    }
-  }, [location]);
-
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center p-6 bg-gray-50">
 
       {/* Fondo detrás del contenido */}
       <FondoLogo opacity={10} size="180px" />
-
-      {/* SEO */}
-      <Helmet>
-        <title>Yesero, Pintor, Albañil y Microcemento | Emanuel Gauna - Buenos Aires</title>
-        <meta
-          name="description"
-          content="Ofrecemos servicios de yesería, pintura, albañilería y microcemento en Buenos Aires y AMBA. Refacciones, remodelaciones, pisos y  revestimientos. Contacto: 11 6437-1277."
-        />
-        <meta
-          name="keywords"
-          content="yesero, pintor, albañil, microcemento, yesería, albañilería, remodelaciones, refacciones, cielorrasos, buñas, molduras, revoques, pintura, pisos, cerámicas, revestimientos plásticos, Buenos Aires, AMBA"
-        />
-
-        {/* Open Graph para redes sociales */}
-        <meta property="og:title" content="Yesero, Pintor y Albañil | Emanuel Gauna - Buenos Aires" />
-        <meta property="og:description" content="Servicios de yesería, pintura, albañilería y microcemento. Refacciones y remodelaciones profesionales en Buenos Aires y AMBA. Contacto: 11 6437-1277." />
-        <meta property="og:image" content="/logoyeso.png" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yeseria-web.vercel.app/" />
-      </Helmet>
 
       {/* Header principal */}
       <header className="text-center mb-12 relative z-10">
@@ -58,13 +21,7 @@ export default function Home() {
       </header>
 
       {/* Mensaje llamativo de presupuesto */}
-      <BigProjectsBanner
-        message="Más de 15 años transformando hogares y grandes proyectos en Buenos Aires y AMBA. Solicitá tu presupuesto para obras grandes, refacciones de casas y barrios privados, y trabajemos juntos en tu proyecto."
-        fontSize="text-lg md:text-xl font-semibold"
-        bgColor="bg-yellow-100"
-        textColor="text-gray-800"
-        shadow="shadow-md"
-      />
+      <BigProjectsBanner />
 
       {/* Servicios destacados */}
       <section className="text-center max-w-3xl relative z-10 mb-12">
@@ -85,7 +42,6 @@ export default function Home() {
         </p>
       </section>
       <VideosSection />
-
     </section>
   );
 }

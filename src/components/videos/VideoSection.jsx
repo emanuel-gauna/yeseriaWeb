@@ -1,4 +1,9 @@
 // src/components/VideoGallery.jsx
+// Este componente ha sido editado para ser compatible con Next.js,
+// usando la directiva "use client".
+
+"use client";
+
 import React, { useState } from "react";
 import { Loader2, X } from "lucide-react";
 
@@ -38,18 +43,17 @@ export default function VideoSection() {
   return (
     <section className="my-8 z-30">
       {/* Botón con gradiente tipo Instagram */}
-    <h2
-  className="text-xl md:text-2xl font-bold cursor-pointer flex items-center justify-between 
+      <h2
+        className="text-xl md:text-2xl font-bold cursor-pointer flex items-center justify-between 
              p-4 rounded-xl shadow-md transition z-20 text-white
              bg-gradient-to-r from-violet-500 via-red-500 to-yellow-500
              hover:from-yellow-500 hover:via-red-500 hover:to-pink-500
              hover:opacity-95"
-  onClick={() => setOpen(!open)}
->
-  👉 Mirá algunos de nuestros trabajos en video
-  <span>{open ? "▲" : "▼"}</span>
-</h2>
-
+        onClick={() => setOpen(!open)}
+      >
+        👉 Mirá algunos de nuestros trabajos en video
+        <span>{open ? "▲" : "▼"}</span>
+      </h2>
 
       {open && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">

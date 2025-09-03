@@ -1,22 +1,27 @@
-// src/components/Navbar.jsx
-import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
-  const location = useLocation();
+  const router = useRouter();
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const toggleSubmenu = (section) =>
     setOpenSubmenu(openSubmenu === section ? null : section);
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById("contact-section");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false);
+  const scrollToContact = async () => {
+    setIsOpen(false);
+    if (router.pathname !== "/") {
+      await router.push("/#contact-section");
     }
+    setTimeout(() => {
+      const contactSection = document.getElementById("contact-section");
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
   };
 
   const menuItems = [
@@ -55,17 +60,19 @@ export default function Navbar() {
     <nav className="bg-blue-800 text-white p-4 sticky top-0 z-50 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo / Inicio */}
-      <div className="flex items-center gap-2">
-  <img
-    src="/yesero.jpg"       // ruta a tu logo pequeño
-    alt="Logo"
-    className="w-8 h-8 object-contain rounded-full" // tamaño 32x32px
-  />
-  <Link to="/" className="text-2xl font-bold hover:text-blue-300 transition">
-    Inicio
-  </Link>
-</div>
-
+        <div className="flex items-center gap-2">
+          {/* Usamos el componente de Next.js Image para optimización */}
+          <Link href="/" passHref>
+            <img
+              src="/yesero.jpg" // ruta a tu logo pequeño en la carpeta `public`
+              alt="Logo Yesería Gauna"
+              className="w-8 h-8 object-contain rounded-full"
+            />
+          </Link>
+          <Link href="/" className="text-2xl font-bold hover:text-blue-300 transition">
+            Inicio
+          </Link>
+        </div>
 
         {/* Botón móvil */}
         <div className="md:hidden">
@@ -78,14 +85,14 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Menu */}
+        {/* Menú */}
         <ul
           className={`md:flex md:items-center md:gap-4 absolute md:static bg-blue-800 w-full md:w-auto left-0 md:left-auto transition-all duration-300 ${
             isOpen ? "top-16" : "top-[-500px]"
           }`}
         >
           {menuItems.map((item, idx) => {
-            const isActive = item.path && location.pathname === item.path;
+            const isActive = item.path && router.pathname === item.path;
             return (
               <li key={idx} className="relative md:mx-2 group border-b md:border-none">
                 {item.sub.length > 0 ? (
@@ -102,7 +109,7 @@ export default function Navbar() {
                       {item.sub.map((sub, i) => (
                         <li key={i}>
                           <Link
-                            to={sub.path}
+                            href={sub.path}
                             className="block px-4 py-2 hover:bg-blue-600 rounded transition"
                             onClick={() => setIsOpen(false)}
                           >
@@ -117,7 +124,7 @@ export default function Navbar() {
                         {item.sub.map((sub, i) => (
                           <li key={i}>
                             <Link
-                              to={sub.path}
+                              href={sub.path}
                               className="block px-6 py-2 hover:bg-blue-600 rounded transition"
                               onClick={() => setIsOpen(false)}
                             >
@@ -137,7 +144,7 @@ export default function Navbar() {
                   </button>
                 ) : (
                   <Link
-                    to={item.path}
+                    href={item.path}
                     className={`block px-4 py-2 hover:bg-blue-700 rounded md:rounded transition ${
                       isActive ? "bg-blue-900 font-semibold" : ""
                     }`}

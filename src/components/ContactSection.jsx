@@ -1,4 +1,3 @@
-// src/components/ContactSection.jsx
 import React from "react";
 import ContactForm from "./ContactForm";
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa";
@@ -21,7 +20,7 @@ export default function ContactSection() {
           <ContactForm />
 
           <p className="mt-6 text-sm text-gray-600 dark:text-gray-900">
-            💡 Esta página la desarrollé yo mismo.  
+            💡 Esta página la desarrollé yo mismo.
             Si alguna marca de materiales como <strong>Durlock</strong>, <strong>Saint Gobain</strong> o <strong>Mapei</strong> quiere auspiciarme, ¡me encantaría trabajar juntos! 🙌
           </p>
         </div>

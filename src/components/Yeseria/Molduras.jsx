@@ -1,7 +1,4 @@
-// src/components/Yeseria/Molduras.jsx
 import React from "react";
-import { Helmet } from "react-helmet";
-import StickyButtons from "../StickyButtons";
 import FondoLogo from "../FondoLogo";
 
 export default function Molduras() {
@@ -16,29 +13,6 @@ export default function Molduras() {
 
   return (
     <section className="relative py-12 px-6 bg-gray-100 min-h-screen">
-
-      {/* SEO mejorado */}
-      <Helmet>
-        <title>Buñas y Molduras | Yesería Profesional - Emanuel Gauna</title>
-        <meta
-          name="description"
-          content="Instalación profesional de buñas y molduras en yeso. Servicio de yesería en Buenos Aires y AMBA. Contacto: 11 6437-1277."
-        />
-        <meta name="keywords" content="molduras, buñas, yesería, interiores, decoración, refacciones, Buenos Aires, AMBA" />
-        <meta property="og:title" content="Buñas y Molduras Profesionales | Emanuel Gauna" />
-        <meta property="og:description" content="Instalación de buñas y molduras en yeso. Servicio de yesería en Buenos Aires y AMBA." />
-        <meta property="og:image" content="/yesoImg/moldura1.jpg" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yeseria-web.vercel.app/molduras" />
-        <meta name="robots" content="index, follow" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Buñas y Molduras Profesionales | Emanuel Gauna" />
-        <meta name="twitter:description" content="Instalación de buñas y molduras en yeso. Servicio de yesería en Buenos Aires y AMBA." />
-        <meta name="twitter:image" content="/yesoImg/moldura1.jpg" />
-      </Helmet>
-
       {/* Fondo */}
       <FondoLogo />
 
@@ -55,15 +29,15 @@ export default function Molduras() {
         {images.map((src, idx) => (
           <div key={idx} className="overflow-hidden rounded-lg shadow-lg">
             <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
-    <img
-      src={src}
-      alt={`Proyecto de Molduras y buñas ${idx + 1}`}
-      className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-      loading="lazy"
-      width="1200"
-      height="900"
-    />
-  </div>
+              <img
+                src={src}
+                alt={`Proyecto de Molduras y buñas ${idx + 1}`}
+                className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                width="1200"
+                height="900"
+              />
+            </div>
           </div>
         ))}
       </div>

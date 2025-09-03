@@ -1,6 +1,4 @@
-// src/components/Yeseria/Paredes.jsx
 import React from "react";
-import { Helmet } from "react-helmet";
 import FondoLogo from "../FondoLogo";
 
 export default function Paredes() {
@@ -15,29 +13,6 @@ export default function Paredes() {
 
   return (
     <section className="relative py-12 px-6 bg-gray-100 min-h-screen">
-
-      {/* SEO */}
-      <Helmet>
-        <title>Aplicado y Refacción de Paredes | Yesería Profesional - Emanuel Gauna</title>
-        <meta
-          name="description"
-          content="Aplicación profesional de yeso en paredes y refacción de muros existentes. Servicios de yesería en Buenos Aires y AMBA. Contacto: 11 6437-1277."
-        />
-        <meta name="keywords" content="paredes, yesería, refacción, yeso, interiores, exteriores, remodelaciones, Buenos Aires, AMBA" />
-        <meta property="og:title" content="Aplicado y Refacción de Paredes | Emanuel Gauna" />
-        <meta property="og:description" content="Servicios profesionales de yesería en paredes, refacciones y reparaciones en Buenos Aires y AMBA." />
-        <meta property="og:image" content="/yesoImg/bañoConYeso.jpg" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yeseria-web.vercel.app/paredes" />
-        <meta name="robots" content="index, follow" />
-
-        {/* Twitter Card */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Aplicado y Refacción de Paredes | Emanuel Gauna" />
-        <meta name="twitter:description" content="Servicios profesionales de yesería en paredes, refacciones y reparaciones en Buenos Aires y AMBA." />
-        <meta name="twitter:image" content="/yesoImg/bañoConYeso.jpg" />
-      </Helmet>
-
       {/* Fondo */}
       <FondoLogo />
 
@@ -46,8 +21,8 @@ export default function Paredes() {
         Aplicado y Refacción de Paredes
       </h2>
       <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto relative z-10">
-        Realizamos <strong>aplicado de yeso en paredes</strong> de todo tipo de ambientes, interiores y exteriores, asegurando un acabado liso, uniforme y profesional. 
-        También ofrecemos <strong>refacciones y reparación de paredes existentes</strong>, corrigiendo imperfecciones, grietas y daños estructurales, con resultados duraderos y estéticamente impecables. 
+        Realizamos <strong>aplicado de yeso en paredes</strong> de todo tipo de ambientes, interiores y exteriores, asegurando un acabado liso, uniforme y profesional.
+        También ofrecemos <strong>refacciones y reparación de paredes existentes</strong>, corrigiendo imperfecciones, grietas y daños estructurales, con resultados duraderos y estéticamente impecables.
         Más de 15 años de experiencia en remodelaciones y trabajos de interiorismo en Buenos Aires y AMBA.
       </p>
 
@@ -56,15 +31,15 @@ export default function Paredes() {
         {images.map((src, idx) => (
           <div key={idx} className="overflow-hidden rounded-lg shadow-lg">
             <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
-    <img
-      src={src}
-      alt={`Proyecto de Paredes com Yeso ${idx + 1}`}
-      className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
-      loading="lazy"
-      width="1200"
-      height="900"
-    />
-  </div>
+              <img
+                src={src}
+                alt={`Proyecto de Paredes com Yeso ${idx + 1}`}
+                className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                width="1200"
+                height="900"
+              />
+            </div>
           </div>
         ))}
       </div>
