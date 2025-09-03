@@ -27,10 +27,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/acerca-de-nosotros": [
+    "/pintura-exterior": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/acerca-de-nosotros.js"
+      "static/chunks/pages/pintura-exterior.js"
     ]
   },
   "ampFirstPages": []

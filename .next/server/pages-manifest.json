@@ -3,5 +3,5 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/acerca-de-nosotros": "pages/acerca-de-nosotros.js"
+  "/pintura-exterior": "pages/pintura-exterior.js"
 }
