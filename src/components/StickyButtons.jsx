@@ -1,28 +1,56 @@
 import React, { useState } from "react";
-import { FaWhatsapp, FaStore, FaRobot, FaTimes } from "react-icons/fa";
+import { FaWhatsapp, FaStore, FaRobot, FaTimes, FaUser } from "react-icons/fa";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
+// Configuración de la API de Gemini
+// La clave de API se accede de forma segura desde las variables de entorno de Vite
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(API_KEY);
 
 export default function StickyButtons() {
   const [isGeminiChatOpen, setIsGeminiChatOpen] = useState(false);
   const [prompt, setPrompt] = useState('');
-  const [response, setResponse] = useState('');
+  const [chatHistory, setChatHistory] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // Define la instrucción del sistema para darle un "rol" a la IA
+  const systemInstruction = {
+    role: "model",
+    parts: [
+      { text: "Eres un asistente de yesería y pintura amable y profesional para Yesería y Refacciones Gauna. Tu objetivo es responder preguntas sobre los servicios de yesería (como cielorrasos, paredes de drywall, yeso, etc.) y pintura que se ofrecen. Responde de forma concisa y útil, y si la pregunta es irrelevante para los servicios, guía amablemente al usuario de vuelta al tema o sugiérele que se ponga en contacto por WhatsApp para preguntas más específicas. Siempre firma tus respuestas con 'Saludos, Asistente de Yesería Gauna'." }
+    ]
+  };
+  
+  // Función para enviar la solicitud a la API de Gemini
   const handleGenerateContent = async () => {
     if (!prompt) return;
     setLoading(true);
-    setResponse('');
+
+    const newChatHistory = [
+      ...chatHistory,
+      { role: "user", parts: [{ text: prompt }] }
+    ];
+    setChatHistory(newChatHistory);
+    const currentPrompt = prompt;
+    setPrompt('');
+
     try {
+      // Usamos el modelo gemini-1.5-flash por ser rápido
       const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-      const result = await model.generateContent(prompt);
+      // Inicia un chat con el modelo y le da un historial de conversación
+      const chat = model.startChat({ history: [systemInstruction] });
+      const result = await chat.sendMessage(currentPrompt);
       const text = result.response.text();
-      setResponse(text);
+      setChatHistory([
+        ...newChatHistory,
+        { role: "model", parts: [{ text: text }] }
+      ]);
     } catch (error) {
       console.error('Error al generar contenido:', error);
-      setResponse('Hubo un error al conectar con Gemini. Por favor, inténtalo de nuevo.');
+      setChatHistory([
+        ...newChatHistory,
+        { role: "model", parts: [{ text: "Hubo un error al conectar con Gemini. Por favor, inténtalo de nuevo. Saludos, Asistente de Yesería Gauna." }] }
+      ]);
     } finally {
       setLoading(false);
     }
@@ -54,7 +82,7 @@ export default function StickyButtons() {
         <span className="font-semibold">¡Estamos en MERCADO LIBRE!</span>
       </a>
 
-      {/* Botón flotante para Gemini */}
+      {/* Nuevo botón flotante para Gemini */}
       <button
         onClick={() => setIsGeminiChatOpen(!isGeminiChatOpen)}
         aria-label="Abrir chat con Gemini"
@@ -73,8 +101,16 @@ export default function StickyButtons() {
             </button>
           </div>
           <div className="flex-grow overflow-y-auto mb-4 p-2 bg-gray-50 rounded-lg">
-            {response ? (
-              <p className="whitespace-pre-wrap">{response}</p>
+            {chatHistory.length > 0 ? (
+              chatHistory.map((msg, index) => (
+                <div key={index} className={`mb-2 p-2 rounded-lg ${msg.role === 'user' ? 'bg-blue-500 text-white self-end' : 'bg-white text-gray-800 self-start'}`}>
+                  <p className="font-semibold mb-1 flex items-center gap-2">
+                    {msg.role === 'user' ? <FaUser /> : <FaRobot />}
+                    {msg.role === 'user' ? 'Tú' : 'Asistente'}
+                  </p>
+                  <p className="whitespace-pre-wrap">{msg.parts[0].text}</p>
+                </div>
+              ))
             ) : (
               <p className="text-gray-400">Pregúntame sobre proyectos, presupuestos o tipos de materiales.</p>
             )}
@@ -82,7 +118,7 @@ export default function StickyButtons() {
           <textarea
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
-            className="w-full p-2 border rounded-lg text-sm mb-2"
+            className="w-full p-2 border rounded-lg text-sm mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             rows="2"
             placeholder="Escribe tu pregunta..."
           />
