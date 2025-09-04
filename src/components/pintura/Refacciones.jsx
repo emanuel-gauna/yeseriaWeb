@@ -17,9 +17,9 @@ export default function Refacciones() {
       <FondoLogo opacity={10} size="180px" />
 
       {/* Título y descripción */}
-      <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
+      <h1 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
         Refacciones y Restauraciones de Pintura
-      </h2>
+      </h1>
       <p className="text-gray-700 mb-6 text-center max-w-2xl mx-auto relative z-10">
         Nos especializamos en <strong>refacciones de pintura interior y exterior</strong>, retocando y renovando superficies desgastadas o dañadas.
         Aplicamos técnicas profesionales de reparación, sellado y pintura para lograr acabados duraderos, uniformes y estéticamente impecables.

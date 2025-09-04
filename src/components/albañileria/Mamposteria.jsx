@@ -17,9 +17,9 @@ export default function Mamposteria() {
       <FondoLogo />
 
       {/* Título y descripción */}
-      <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
+      <h1 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
         Mampostería Profesional
-      </h2>
+      </h1>
       <p className="text-gray-700 text-center mb-8 max-w-3xl mx-auto relative z-10">
         Nos especializamos en la <strong>construcción y refacción de muros, tabiques y paredes</strong>, tanto estructurales como divisorias.
         Trabajamos con <strong>ladrillos, bloques y materiales mixtos</strong> garantizando seguridad, durabilidad y acabados de alta calidad.

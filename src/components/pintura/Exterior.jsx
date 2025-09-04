@@ -17,9 +17,9 @@ export default function Exterior() {
       <FondoLogo opacity={10} size="180px" />
 
       {/* Título y descripción */}
-      <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
+      <h1 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
         Pintura Exterior Profesional
-      </h2>
+      </h1>
       <p className="text-gray-700 mb-6 text-center max-w-2xl mx-auto relative z-10">
         Realizamos <strong>pintura profesional en fachadas, balcones y terrazas</strong>, utilizando materiales resistentes a la intemperie y técnicas de preparación de superficies que aseguran <strong>acabados duraderos, uniformes y estéticos</strong>.
         Ideal para proyectos residenciales, comerciales o industriales en Buenos Aires y AMBA.

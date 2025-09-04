@@ -17,9 +17,9 @@ export default function Revestimientos() {
       <FondoLogo opacity={10} size="180px" />
 
       {/* Título y descripción */}
-      <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
+      <h1 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
         Revestimientos y Pisos Profesionales
-      </h2>
+      </h1>
       <p className="text-gray-700 text-center mb-8 max-w-3xl mx-auto relative z-10">
         Ofrecemos <strong>colocación de cerámicas, pisos de microcemento, revoques y revestimientos exteriores</strong> para todo tipo de espacios.
         Garantizamos <strong>terminaciones duraderas y estéticamente impecables</strong>, adaptadas a proyectos residenciales, comerciales e industriales en Buenos Aires y AMBA.

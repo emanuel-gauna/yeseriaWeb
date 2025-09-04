@@ -17,9 +17,9 @@ export default function Molduras() {
       <FondoLogo />
 
       {/* Título y descripción */}
-      <h2 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
+      <h1 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
         Buñas y Molduras
-      </h2>
+      </h1>
       <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto relative z-10">
         Nos especializamos en la <strong>realización de buñas y molduras de yeso</strong>, tanto para interiores como exteriores. Ofrecemos acabados detallados, precisos y duraderos, adaptados a cada proyecto, asegurando un trabajo profesional que realza la estética de hogares, oficinas y espacios comerciales en Buenos Aires y el AMBA.
       </p>
