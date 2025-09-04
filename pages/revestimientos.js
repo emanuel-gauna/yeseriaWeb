@@ -11,7 +11,7 @@ export default function Revestimientos() {
         <title>Revestimientos y Pisos Profesionales | Emanuel Gauna</title>
         <meta
           name="description"
-          content="Colocación profesional de cerámicas, pisos de microcemento, revoques y revestimientos exteriores. Acabados duraderos y estéticamente impecables en Buenos Aires y AMBA."
+          content="Colocación de cerámicas, revoques y revestimientos exteriores e interiores . Acabados duraderos en Buenos Aires y AMBA. ¡Contactanos! 11 6437-1277."
         />
         <meta name="keywords" content="revestimientos, pisos, cerámicas, microcemento, revoques, albañilería, Buenos Aires, AMBA" />
         <meta property="og:title" content="Revestimientos Profesionales | Emanuel Gauna" />

@@ -11,7 +11,7 @@ export default function Microcemento() {
         <title>Microcemento Profesional | Emanuel Gauna</title>
         <meta
           name="description"
-          content="Aplicación profesional de microcemento en pisos, paredes y superficies. Ideal para remodelaciones y revestimientos decorativos en Buenos Aires y AMBA. Contacto: 11 6437-1277."
+          content="Aplicación de microcemento en pisos, paredes y superficies en Buenos Aires y AMBA. Ideal para remodelaciones y revestimientos decorativos. ¡Contactanos! 11 6437-1277."
         />
         <meta name="keywords" content="microcemento, revestimientos, pisos, paredes, baños, cocinas, interiores, exteriores, Buenos Aires, AMBA" />
         <meta property="og:title" content="Microcemento Profesional | Emanuel Gauna" />
