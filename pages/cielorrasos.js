@@ -6,6 +6,7 @@ import FondoLogo from '../src/components/FondoLogo';
 export default function Cielorrasos() {
   return (
     <>
+    
       {/* Las etiquetas <Head> reemplazan a <Helmet> en Next.js */}
       <Head>
         <title>Cielorrasos y Molduras | Yesería Profesional - Emanuel Gauna</title>

@@ -3,9 +3,9 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export default function BigProjectsBanner() {
   return (
-    <section className="bg-yellow-100 py-12 px-6">
+    <section className="bg-yellow-300 py-12 px-6 z-0.8" >
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-yellow-800 mb-4">
+        <h2 className="text-3xl font-bold text-yellow-900 mb-4">
           Presupuestos para Obras Grandes
         </h2>
         <p className="text-yellow-900 text-lg mb-6">
