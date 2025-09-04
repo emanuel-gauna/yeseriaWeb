@@ -28,8 +28,8 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="description" content={pageProps.description || defaultDescription} />
         <meta name="keywords" content={pageProps.keywords || defaultKeywords} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://yeseria-web.vercel.app" />
-        <meta http-equiv="content-language" content="es-ar" />
+        {/* Etiqueta canónica eliminada de aquí. Se debe colocar individualmente en cada página. */}
+        <meta httpEquiv="content-language" content="es-ar" />
 
         {/* Etiquetas de verificación para Google y Bing */}
         <meta name="google-site-verification" content="TxMAIrxP6AnHjZ5xHX002zGqa75NscV5vRW4CxGsDsg" />
