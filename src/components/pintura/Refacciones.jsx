@@ -16,15 +16,26 @@ export default function Refacciones() {
       {/* Fondo */}
       <FondoLogo opacity={10} size="180px" />
 
-      {/* Título y descripción */}
+      {/* Título optimizado */}
       <h1 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
-        Refacciones y Restauraciones de Pintura
+        Refacciones y Restauraciones de Pintura Profesional en Buenos Aires y AMBA
       </h1>
-      <p className="text-gray-700 mb-6 text-center max-w-2xl mx-auto relative z-10">
-        Nos especializamos en <strong>refacciones de pintura interior y exterior</strong>, retocando y renovando superficies desgastadas o dañadas.
-        Aplicamos técnicas profesionales de reparación, sellado y pintura para lograr acabados duraderos, uniformes y estéticamente impecables.
-        Ideal para viviendas, departamentos, oficinas y locales comerciales en Buenos Aires y AMBA.
-      </p>
+
+      {/* Descripción ampliada */}
+      <div className="text-gray-700 mb-6 text-center max-w-2xl mx-auto relative z-10 space-y-4">
+        <p>
+          Nos especializamos en <strong>refacciones y restauraciones de pintura</strong> tanto en interiores como exteriores.
+          Renovamos paredes, cielorrasos y superficies dañadas, aplicando técnicas profesionales de preparación, sellado y pintura.
+        </p>
+        <p>
+          Garantizamos <strong>acabados duraderos, uniformes y estéticamente impecables</strong> en viviendas, departamentos,
+          oficinas y locales comerciales en Buenos Aires y AMBA.
+        </p>
+        <p>
+          Nuestro equipo trabaja con rapidez, limpieza y profesionalismo, adaptándose a cada proyecto y ofreciendo soluciones
+          personalizadas para que tus espacios luzcan como nuevos. Contactanos para un presupuesto sin compromiso.
+        </p>
+      </div>
 
       {/* Galería de imágenes */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 relative z-10">
@@ -33,7 +44,7 @@ export default function Refacciones() {
             <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
               <img
                 src={src}
-                alt={`Proyecto de refacciones ${idx + 1}`}
+                alt={`Proyecto de refacciones de pintura en Buenos Aires y AMBA - proyecto ${idx + 1}`}
                 className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                 loading="lazy"
                 width="1200"

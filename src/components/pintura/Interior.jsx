@@ -16,15 +16,30 @@ export default function Interior() {
       {/* Fondo */}
       <FondoLogo opacity={10} size="180px" />
 
-      {/* Título y descripción */}
+      {/* Título optimizado */}
       <h1 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
-        Pintura Interior Profesional
+        Pintura Interior Profesional en Buenos Aires y AMBA
       </h1>
-      <p className="text-gray-700 mb-6 text-center max-w-2xl mx-auto relative z-10">
-        Ejecutamos <strong>pintura interior de paredes, cielorrasos y detalles decorativos</strong> con acabados de alta calidad y durabilidad.
-        Utilizamos técnicas profesionales que aseguran superficies lisas, uniformes y estéticamente impecables.
-        Ideal para casas, departamentos y oficinas en Buenos Aires y AMBA.
-      </p>
+
+      {/* Descripción ampliada */}
+      <div className="text-gray-700 mb-6 text-center max-w-2xl mx-auto relative z-10 space-y-4">
+        <p>
+          Ofrecemos <strong>servicios de pintura interior profesional</strong> para
+          paredes, cielorrasos y detalles decorativos. Aplicamos técnicas
+          especializadas que aseguran <strong>acabados lisos, uniformes y duraderos</strong>.
+        </p>
+        <p>
+          Trabajamos en <strong>hogares, departamentos y oficinas</strong> en Buenos Aires
+          y AMBA, adaptando cada proyecto a las necesidades específicas del cliente. 
+          Utilizamos materiales de alta calidad que garantizan colores vibrantes y
+          superficies resistentes al desgaste.
+        </p>
+        <p>
+          Nuestro enfoque combina rapidez, limpieza y profesionalismo, asegurando un
+          resultado estético y funcional. Contactanos para un presupuesto personalizado
+          y mejora la apariencia de tus espacios interiores.
+        </p>
+      </div>
 
       {/* Galería de imágenes */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 relative z-10">
@@ -33,7 +48,7 @@ export default function Interior() {
             <div className="relative w-full aspect-[16/9] sm:aspect-[4/3]">
               <img
                 src={src}
-                alt={`Proyecto de pintura interior ${idx + 1}`}
+                alt={`Proyecto de pintura interior en Buenos Aires y AMBA - proyecto ${idx + 1}`}
                 className="absolute top-0 left-0 w-full h-full object-cover transform hover:scale-105 transition-transform duration-300"
                 loading="lazy"
                 width="1200"

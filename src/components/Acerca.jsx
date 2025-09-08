@@ -5,38 +5,38 @@ export default function Acerca() {
   return (
     <section className="relative min-h-screen p-6 bg-transparent flex flex-col items-center justify-center">
 
-      {/* Título */}
+      {/* Título principal */}
       <h1 className="text-4xl font-bold text-blue-700 mb-6 text-center z-10 relative">
-        Acerca de Emanuel Gauna
+        Acerca de Emanuel Gauna | Yesero, Pintor y Albañil Profesional
       </h1>
 
-      {/* Descripción */}
-      <p className="text-gray-700 max-w-3xl text-center leading-relaxed mb-4 z-10 relative">
-        Soy <strong>yesero</strong>, <strong>pintor</strong> y <strong>albañil</strong> con más de 15 años de experiencia, especializado en
-        <strong> remodelaciones</strong>, aplicaciones de <strong>microcemento</strong>, revestimientos y pintura de interiores y exteriores.
-      </p>
+      {/* Descripción optimizada */}
+      <div className="text-gray-700 max-w-3xl text-center leading-relaxed mb-6 z-10 relative space-y-4">
+        <p>
+          Soy <strong>Emanuel Gauna</strong>, <strong>yesero</strong>, <strong>pintor</strong> y <strong>albañil</strong> con más de 15 años de experiencia, especializado en <strong>remodelaciones</strong>, <strong>microcemento</strong>, <strong>revestimientos</strong> y pintura de interiores y exteriores.
+        </p>
+        <p>
+          Mi objetivo es ofrecer <strong>servicios profesionales de alta calidad</strong>, adaptados a cada proyecto, ya sea un hogar, oficina o un gran emprendimiento. Garantizo atención personalizada, resultados duraderos y acabados impecables que superen las expectativas de mis clientes en Buenos Aires y el AMBA.
+        </p>
+        <p>
+          Contactame hoy mismo para recibir asesoramiento, presupuesto sin compromiso y transformar tus espacios con un acabado profesional y estético.
+        </p>
+      </div>
 
-      <p className="text-gray-700 max-w-3xl text-center leading-relaxed mb-6 z-10 relative">
-        Mi objetivo es ofrecer <strong>servicios profesionales de alta calidad</strong>, adaptados a cada proyecto, ya sea un hogar, oficina o un gran emprendimiento.
-        Garantizo atención personalizada, resultados duraderos y acabados impecables que superen las expectativas de mis clientes en Buenos Aires y el AMBA.
-      </p>
-
-      {/* Foto y QR en recuadro más pequeño */}
+      {/* Foto y QR */}
       <div className="relative mt-8 flex flex-col items-center z-10">
-        {/* Contenedor del contenido más compacto */}
         <div className="relative z-20 flex flex-col items-center bg-white bg-opacity-90 p-6 rounded-2xl shadow-lg text-center w-full max-w-md">
-
           {/* Foto */}
           <img
             src="/acerca.jpg"
-            alt="Emanuel Gauna - Yesero, Pintor y Albañil"
+            alt="Emanuel Gauna - Yesero, Pintor y Albañil en Buenos Aires"
             className="w-40 h-40 rounded-full object-cover shadow-md mb-4"
             loading="lazy"
             width="1200"
             height="900"
           />
 
-          {/* QR code */}
+          {/* QR */}
           <div className="p-3 bg-gray-100 rounded-xl mb-3">
             <QRCodeCanvas
               value="https://yeseria-web.vercel.app"
