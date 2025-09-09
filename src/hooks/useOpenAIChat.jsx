@@ -1,4 +1,3 @@
-// hooks/useOpenAIChat.js
 import { useState } from "react";
 
 export function useOpenAIChat() {
@@ -23,24 +22,15 @@ export function useOpenAIChat() {
 
       const data = await res.json();
 
-      if (data.error?.code === "insufficient_quota") {
-        setChatHistory(prev => [
-          ...prev,
-          { role: "model", content: "Lo siento, se ha excedido la cuota de tu cuenta de OpenAI. Por favor revisa tu plan o espera a que se renueve." }
-        ]);
-      } else if (data.error) {
-        setChatHistory(prev => [
-          ...prev,
-          { role: "model", content: "Hubo un error con la API de OpenAI. Intenta nuevamente más tarde." }
-        ]);
-      } else {
-        const responseText = data.choices?.[0]?.message?.content || "No hubo respuesta.";
-        setChatHistory(prev => [...prev, { role: "model", content: responseText }]);
-      }
-    } catch (err) {
-      setChatHistory(prev => [
+      const responseText = data.reply || "No hubo respuesta.";
+      setChatHistory((prev) => [
         ...prev,
-        { role: "model", content: "Error de conexión. Intenta nuevamente." }
+        { role: "model", content: responseText },
+      ]);
+    } catch (err) {
+      setChatHistory((prev) => [
+        ...prev,
+        { role: "model", content: "Error de conexión. Intenta nuevamente." },
       ]);
       console.error(err);
     } finally {
