@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useOpenAIChat } from "../hooks/UseOpenAIChat.jsx";
+import { useOpenAIChat } from "../hooks/useOpenAIChat.jsx";
 
 export default function StickyButtons() {
   const [isChatOpen, setIsChatOpen] = useState(false);
