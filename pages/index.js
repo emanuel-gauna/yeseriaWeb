@@ -1,11 +1,11 @@
 
 import React from 'react';
 import SeoHead from '../src/components/SeoHead'; // Asegúrate que la ruta sea correcta
-import CielorrasosComponent from '../src/components/Yeseria/Cielorrasos';
 import StickyButtons from '../src/components/StickyButtons';
 import FondoLogo from '../src/components/FondoLogo';
 import Home from '../src/components/Home';
 import Gallery from '../src/components/Gallery';
+import GiscusComments from "../src/components/GiscusComments";
 
 
 export default function HomePage() {
@@ -31,8 +31,10 @@ export default function HomePage() {
       />
       <main className="min-h-screen">
         <Home />
+        
         <Gallery />
         <FondoLogo />
+        <GiscusComments />
       </main>
       <StickyButtons />
     </>

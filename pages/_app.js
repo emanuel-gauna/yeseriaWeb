@@ -6,6 +6,7 @@ import Footer from '../src/components/Footer';
 import FondoLogo from '../src/components/FondoLogo';
 import '../src/styles/globals.css';
 import { Inter } from 'next/font/google';
+import TopBanner from '../src/components/TopBanner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -53,6 +54,7 @@ export default function MyApp({ Component, pageProps }) {
       <main className={inter.className}>
         <div className="relative">
           <Navbar />
+          <TopBanner />
           <FondoLogo opacity={10} size="180px" />
           <StickyButtons />
 

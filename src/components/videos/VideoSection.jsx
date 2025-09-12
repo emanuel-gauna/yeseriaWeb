@@ -1,11 +1,7 @@
-// src/components/VideoGallery.jsx
-// Este componente ha sido editado para ser compatible con Next.js,
-// usando la directiva "use client".
-
 "use client";
-
 import React, { useState } from "react";
 import { Loader2, X } from "lucide-react";
+import { FaTiktok, FaInstagram } from "react-icons/fa";
 
 export default function VideoSection() {
   const [open, setOpen] = useState(false);
@@ -13,11 +9,9 @@ export default function VideoSection() {
   const [modalVideo, setModalVideo] = useState(null);
 
   const handleLoad = (index) => {
-    setLoading((prev) => {
-      const updated = [...prev];
-      updated[index] = false;
-      return updated;
-    });
+    const updated = [...loading];
+    updated[index] = false;
+    setLoading(updated);
   };
 
   const videos = [
@@ -29,60 +23,53 @@ export default function VideoSection() {
     { type: "instagram", src: "https://www.instagram.com/reel/DMREvoDMpck/embed" },
   ];
 
-  // Función para abrir modal con autoplay
-  const openModal = (src, type) => {
-    let autoplaySrc = src;
-    if (type === "tiktok") {
-      autoplaySrc += "?autoplay=1";
-    } else if (type === "instagram") {
-      autoplaySrc += "?autoplay=1";
-    }
-    setModalVideo(autoplaySrc);
+  const openModal = (src) => {
+    setModalVideo(src + "?autoplay=1");
   };
 
   return (
-    <section className="my-8 z-30">
-      {/* Botón con gradiente tipo Instagram */}
-      <h2
-        className="text-xl md:text-2xl font-bold cursor-pointer flex items-center justify-between 
-             p-4 rounded-xl shadow-md transition z-20 text-white
-             bg-gradient-to-r from-violet-500 via-red-500 to-yellow-500
-             hover:from-yellow-500 hover:via-red-500 hover:to-pink-500
-             hover:opacity-95"
+    <section className="my-8 relative z-20 max-w-full px-4">
+      {/* Banner horizontal con logos */}
+      <div
+        className="flex items-center justify-center gap-6 p-6 rounded-xl shadow-lg cursor-pointer bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white"
         onClick={() => setOpen(!open)}
       >
-        👉 Mirá algunos de nuestros trabajos en video
+        <FaTiktok className="w-8 h-8" />
+        <FaInstagram className="w-8 h-8" />
+        <span className="text-lg font-bold">
+          ¡Dale click para ver nuestros videos en TikTok e Instagram!
+        </span>
         <span>{open ? "▲" : "▼"}</span>
-      </h2>
+      </div>
 
+      {/* Galería de videos */}
       {open && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-          {videos.map((video, i) => {
-            const aspectClass =
-              video.type === "tiktok" ? "aspect-[9/16]" : "aspect-square";
-            return (
-              <div
-                key={i}
-                className={`relative w-full ${aspectClass} bg-gray-200 rounded-xl overflow-hidden shadow-md cursor-pointer`}
-                onClick={() => openModal(video.src, video.type)}
-              >
-                {loading[i] && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-                    <Loader2 className="animate-spin w-8 h-8 text-gray-500" />
-                  </div>
-                )}
-                <iframe
-                  src={video.src}
-                  className="w-full h-full"
-                  onLoad={() => handleLoad(i)}
-                  allowFullScreen
-                ></iframe>
-              </div>
-            );
-          })}
+          {videos.map((video, i) => (
+            <div
+              key={i}
+              className={`relative w-full ${
+                video.type === "tiktok" ? "aspect-[9/16]" : "aspect-square"
+              } bg-gray-200 rounded-xl overflow-hidden shadow-md cursor-pointer`}
+              onClick={() => openModal(video.src)}
+            >
+              {loading[i] && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                  <Loader2 className="animate-spin w-8 h-8 text-gray-500" />
+                </div>
+              )}
+              <iframe
+                src={video.src}
+                className="w-full h-full"
+                onLoad={() => handleLoad(i)}
+                allowFullScreen
+              ></iframe>
+            </div>
+          ))}
         </div>
       )}
 
+      {/* Modal */}
       {modalVideo && (
         <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4">
           <button
@@ -93,7 +80,7 @@ export default function VideoSection() {
           </button>
           <iframe
             src={modalVideo}
-            className="w-full max-w-4xl h-[80vh]"
+            className="w-full max-w-4xl h-[70vh] rounded-xl shadow-lg"
             allowFullScreen
           ></iframe>
         </div>
