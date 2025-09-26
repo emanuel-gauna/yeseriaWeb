@@ -12,7 +12,7 @@
   "dependencies": {
     "@formspree/react": "^3.0.0",
     "@giscus/react": "^3.1.0",
-    "@google/genai": "^1.17.0",
+    "@google/genai": "^1.20.0",
     "@tailwindcss/postcss": "^4.1.12",
     "autoprefixer": "^10.4.21",
     "dotenv": "^17.2.2",
