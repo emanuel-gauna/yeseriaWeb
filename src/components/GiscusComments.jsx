@@ -6,8 +6,8 @@ export default function GiscusComments() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="mt-12 w-full max-w-6xl mx-auto relative z-20 p-6 bg-white/95 rounded-3xl shadow-2xl transition-all duration-300">
-      <h2 className="text-2xl md:text-3xl font-extrabold text-gray-800 text-center mb-6">
+    <div className="mt-12 w-full max-w-6xl mx-auto relative z-20 p-6 bg-white/95 rounded-3xl shadow-2xl transition-all duration-300  dark:bg-gray-700 ">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-gray-800 text-center mb-6  dark:text-gray-100">
         ¡Comparte tu experiencia con nuestros trabajos de yesería!
       </h2>
 

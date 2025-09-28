@@ -1,8 +1,31 @@
-import React from "react";
+// FondoLogo.jsx
+import React, { useEffect, useState } from "react";
 
 export default function FondoLogo() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    // Detecta cambios en la clase 'dark' del <html>
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains("dark"));
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    // Inicializamos
+    setIsDark(document.documentElement.classList.contains("dark"));
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Cambia el logo de fondo según el tema
   const logoStyle = {
-    backgroundImage: "url('/logo.png')",
+    backgroundImage: isDark
+      ? "url('/logo-dark.png')" // si quieres otro logo en modo oscuro
+      : "url('/logo.png')",
     backgroundRepeat: "repeat",
     backgroundSize: "180px",
     backgroundColor: "transparent",
@@ -12,7 +35,7 @@ export default function FondoLogo() {
 
   return (
     <div
-      className="fixed inset-0 pointer-events-none transition-colors duration-500"
+      className="fixed inset-0 pointer-events-none transition-all duration-500"
       style={logoStyle}
     />
   );

@@ -3,7 +3,7 @@ import { QRCodeCanvas } from "qrcode.react";
 
 export default function Acerca() {
   return (
-    <section className="relative min-h-screen p-6 bg-transparent flex flex-col items-center justify-center">
+    <section className="relative min-h-screen p-6 bg-transparent flex flex-col items-center justify-center  dark:bg-gray-900">
 
       {/* Título principal */}
       <h1 className="text-4xl font-bold text-blue-700 mb-6 text-center z-10 relative">
@@ -11,7 +11,7 @@ export default function Acerca() {
       </h1>
 
       {/* Descripción optimizada */}
-      <div className="text-gray-700 max-w-3xl text-center leading-relaxed mb-6 z-10 relative space-y-4">
+      <div className="text-gray-700 max-w-3xl text-center leading-relaxed mb-6 z-10 relative space-y-4  dark:text-gray-300">
         <p>
           Soy <strong>Emanuel Gauna</strong>, <strong>yesero</strong>, <strong>pintor</strong> y <strong>albañil</strong> con más de 15 años de experiencia, especializado en <strong>remodelaciones</strong>, <strong>microcemento</strong>, <strong>revestimientos</strong> y pintura de interiores y exteriores.
         </p>

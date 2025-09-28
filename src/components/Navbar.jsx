@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import ThemeSwitch from "./ThemeSwitch";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,14 +58,13 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="bg-blue-800 text-white p-4 sticky top-0 z-50 shadow-lg">
+    <nav className="bg-blue-800 dark:bg-gray-900 text-white p-4 sticky top-0 z-50 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo / Inicio */}
         <div className="flex items-center gap-2">
-          {/* Usamos el componente de Next.js Image para optimización */}
           <Link href="/" passHref>
             <img
-              src="/yesero.jpg" // ruta a tu logo pequeño en la carpeta `public`
+              src="/yesero.jpg"
               alt="Logo Yesería Gauna"
               className="w-8 h-8 object-contain rounded-full"
             />
@@ -74,8 +74,14 @@ export default function Navbar() {
           </Link>
         </div>
 
+        {/* Switch de Modo Oscuro */}
+        <div className="hidden md:block">
+          <ThemeSwitch />
+        </div>
+
         {/* Botón móvil */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeSwitch />
           <button
             onClick={toggleMenu}
             aria-label="Abrir menú"
@@ -87,30 +93,31 @@ export default function Navbar() {
 
         {/* Menú */}
         <ul
-          className={`md:flex md:items-center md:gap-4 absolute md:static bg-blue-800 w-full md:w-auto left-0 md:left-auto transition-all duration-300 ${
+          className={`md:flex md:items-center md:gap-4 absolute md:static bg-blue-800 dark:bg-gray-900 w-full md:w-auto left-0 md:left-auto transition-all duration-300 ${
             isOpen ? "top-16" : "top-[-500px]"
           }`}
         >
           {menuItems.map((item, idx) => {
             const isActive = item.path && router.pathname === item.path;
             return (
-              <li key={idx} className="relative md:mx-2 group border-b md:border-none">
+              <li key={idx} className="relative md:mx-2 group border-b rounded-lg md:border-none  dark:bg-gray-700">
                 {item.sub.length > 0 ? (
                   <>
                     <button
-                      className="w-full text-left px-4 py-2 hover:bg-blue-700 rounded flex justify-between items-center transition"
+                      className="w-full text-left px-4 py-2 hover:bg-blue-700 dark:hover:bg-gray-700 rounded flex justify-between items-center transition"
                       onClick={() => toggleSubmenu(item.label)}
                       aria-expanded={openSubmenu === item.label}
                     >
                       {item.label} ▾
                     </button>
+
                     {/* Submenu escritorio */}
-                    <ul className="hidden md:absolute md:top-full md:left-0 md:bg-blue-700 md:shadow-lg md:rounded md:group-hover:block">
+                    <ul className="hidden md:absolute md:top-full md:left-0 md:bg-blue-700 dark:md:bg-gray-800 md:shadow-lg md:rounded md:group-hover:block">
                       {item.sub.map((sub, i) => (
                         <li key={i}>
                           <Link
                             href={sub.path}
-                            className="block px-4 py-2 hover:bg-blue-600 rounded transition"
+                            className="block px-4 py-2 hover:bg-blue-600 dark:hover:bg-gray-700 rounded transition"
                             onClick={() => setIsOpen(false)}
                           >
                             {sub.label}
@@ -118,14 +125,15 @@ export default function Navbar() {
                         </li>
                       ))}
                     </ul>
+
                     {/* Submenu móvil */}
                     {openSubmenu === item.label && (
-                      <ul className="md:hidden bg-blue-700 w-full shadow-lg rounded">
+                      <ul className="md:hidden bg-blue-700 dark:bg-gray-800 w-full shadow-lg rounded">
                         {item.sub.map((sub, i) => (
                           <li key={i}>
                             <Link
                               href={sub.path}
-                              className="block px-6 py-2 hover:bg-blue-600 rounded transition"
+                              className="block px-6 py-2 hover:bg-blue-600 dark:hover:bg-gray-700 rounded transition"
                               onClick={() => setIsOpen(false)}
                             >
                               {sub.label}
@@ -138,15 +146,15 @@ export default function Navbar() {
                 ) : item.action ? (
                   <button
                     onClick={item.action}
-                    className="block w-full text-left px-4 py-2 hover:bg-blue-600 rounded md:rounded transition"
+                    className="block w-full text-left px-4 py-2 hover:bg-blue-600 dark:hover:bg-gray-700 rounded transition"
                   >
                     {item.label}
                   </button>
                 ) : (
                   <Link
                     href={item.path}
-                    className={`block px-4 py-2 hover:bg-blue-700 rounded md:rounded transition ${
-                      isActive ? "bg-blue-900 font-semibold" : ""
+                    className={`block px-4 py-2 hover:bg-blue-700 dark:hover:bg-gray-700 rounded transition ${
+                      isActive ? "bg-blue-900 dark:bg-gray-800 font-semibold" : ""
                     }`}
                     onClick={() => setIsOpen(false)}
                   >

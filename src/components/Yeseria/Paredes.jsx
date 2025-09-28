@@ -12,7 +12,7 @@ export default function Paredes() {
   ];
 
   return (
-    <section className="relative py-12 px-6 bg-gray-100 min-h-screen">
+    <section className="relative py-12 px-6 bg-gray-100 min-h-screen dark:bg-gray-900">
       {/* Fondo */}
       <FondoLogo />
 
@@ -20,7 +20,7 @@ export default function Paredes() {
       <h1 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
         Aplicado y Refacción de Paredes
       </h1>
-      <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto relative z-10">
+      <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto relative z-10 dark:text-gray-300">
         Realizamos <strong>aplicado de yeso en paredes</strong> de todo tipo de ambientes, interiores y exteriores, asegurando un acabado liso, uniforme y profesional.
         También ofrecemos <strong>refacciones y reparación de paredes existentes</strong>, corrigiendo imperfecciones, grietas y daños estructurales, con resultados duraderos y estéticamente impecables.
         Más de 15 años de experiencia en remodelaciones y trabajos de interiorismo en Buenos Aires y AMBA.

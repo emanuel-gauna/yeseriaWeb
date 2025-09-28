@@ -12,15 +12,15 @@ export default function Cielorrasos() {
   ];
 
   return (
-    <section className="py-12 px-6 bg-gray-100 min-h-screen relative">
+    <section className="py-12 px-6 bg-gray-100 dark:bg-gray-900  min-h-screen relative">
       {/* Fondo */}
       <FondoLogo />
 
       {/* Título y descripción */}
-      <h1 className="text-3xl font-bold text-blue-700 mb-2 text-center relative z-10">
+      <h1 className="text-3xl font-bold text-blue-700 mb-2 text-center relative z-10 ">
         Cielorrasos Armados
       </h1>
-      <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto relative z-10">
+      <p className="text-center text-gray-700 mb-8 max-w-3xl mx-auto relative z-10  dark:text-gray-300">
         Nos especializamos en el <strong>armado y aplicación de cielorrasos</strong> de yeso, incluyendo buñas y molduras.
         También realizamos <strong>refacciones de cielorrasos existentes</strong>, asegurando un acabado profesional y duradero.
         Más de 15 años de experiencia en remodelaciones y trabajos de interiorismo en Buenos Aires y el AMBA.

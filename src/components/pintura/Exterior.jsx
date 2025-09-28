@@ -12,7 +12,7 @@ export default function Exterior() {
   ];
 
   return (
-    <section className="relative py-12 px-6 bg-gray-100 min-h-screen">
+    <section className="relative py-12 px-6 bg-gray-100 min-h-screen  dark:bg-gray-900">
       {/* Fondo */}
       <FondoLogo opacity={10} size="180px" />
 
@@ -22,7 +22,7 @@ export default function Exterior() {
       </h1>
 
       {/* Descripción ampliada */}
-      <div className="text-gray-700 mb-6 text-center max-w-2xl mx-auto relative z-10 space-y-4">
+      <div className="text-gray-700 mb-6 text-center max-w-2xl mx-auto relative z-10 space-y-4  dark:text-gray-300 ">
         <p>
           Nuestro servicio de <strong>pintura exterior</strong> está diseñado para
           proteger y embellecer fachadas, balcones y terrazas. Utilizamos materiales

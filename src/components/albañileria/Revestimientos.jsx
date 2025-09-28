@@ -12,7 +12,7 @@ export default function Revestimientos() {
   ];
 
   return (
-    <section className="relative py-12 px-6 bg-gray-100 min-h-screen">
+    <section className="relative py-12 px-6 bg-gray-100 min-h-screen  dark:bg-gray-900">
       {/* Fondo */}
       <FondoLogo opacity={10} size="180px" />
 
@@ -22,7 +22,7 @@ export default function Revestimientos() {
       </h1>
 
       {/* Descripción ampliada */}
-      <div className="text-gray-700 mb-6 text-center max-w-3xl mx-auto relative z-10 space-y-4">
+      <div className="text-gray-700 mb-6 text-center max-w-3xl mx-auto relative z-10 space-y-4  dark:text-gray-300">
         <p>
           Ofrecemos <strong>colocación de cerámicas, pisos de microcemento, revoques y revestimientos exteriores</strong>
           en todo tipo de espacios, garantizando acabados duraderos y estéticamente impecables.

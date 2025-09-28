@@ -12,7 +12,7 @@ export default function Mamposteria() {
   ];
 
   return (
-    <section className="relative py-12 px-6 bg-gray-100 min-h-screen">
+    <section className="relative py-12 px-6 bg-gray-100 min-h-screen  dark:bg-gray-900">
       {/* Fondo */}
       <FondoLogo />
 
@@ -20,7 +20,7 @@ export default function Mamposteria() {
       <h1 className="text-3xl font-bold text-blue-700 mb-6 text-center relative z-10">
         Mampostería Profesional
       </h1>
-      <p className="text-gray-700 text-center mb-8 max-w-3xl mx-auto relative z-10">
+      <p className="text-gray-700 text-center mb-8 max-w-3xl mx-auto relative z-10  dark:text-gray-300" >
         Nos especializamos en la <strong>construcción y refacción de muros, tabiques y paredes</strong>, tanto estructurales como divisorias.
         Trabajamos con <strong>ladrillos, bloques y materiales mixtos</strong> garantizando seguridad, durabilidad y acabados de alta calidad.
         Más de 15 años de experiencia en proyectos residenciales, comerciales y refacciones en Buenos Aires y AMBA.
