@@ -5,7 +5,7 @@ import StickyButtons from '../src/components/StickyButtons';
 import FondoLogo from '../src/components/FondoLogo';
 import Home from '../src/components/Home';
 import Gallery from '../src/components/Gallery';
-import GiscusComments from "../src/components/GiscusComments";
+import Comments from '../src/components/Comments';
 
 
 export default function HomePage() {
@@ -34,7 +34,7 @@ export default function HomePage() {
         
         <Gallery />
         <FondoLogo />
-        <GiscusComments />
+        <Comments />
       </main>
       <StickyButtons />
     </>
