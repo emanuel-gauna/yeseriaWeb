@@ -1,5 +1,6 @@
+
 import { useState, useEffect, useRef } from "react";
-import { supabase } from "../lib/supabaseClient";
+import { supabase } from "../../lib/supabaseClient";
 
 export default function Comments() {
   const [comments, setComments] = useState([]);
@@ -65,63 +66,77 @@ export default function Comments() {
   };
 
   return (
-    <div className="comments-section max-w-xl mx-auto p-4 flex flex-col">
-      <div className="mb-2 font-bold text-lg">
-        Comentarios ({comments.length})
+    <div className="comments-section relative z-10 max-w-6xl mx-auto p-4 flex flex-col lg:flex-row gap-6">
+      {/* Comentarios Supabase */}
+      <div className="flex-1 p-4 rounded-lg bg-blue-50 dark:bg-gray-800 shadow-md">
+        <div className="mb-2 font-bold text-lg text-gray-900 dark:text-gray-100">
+          Comentarios ({comments.length})
+        </div>
+
+        {newCommentsCount > 0 && (
+          <div
+            className="bg-green-100 text-green-800 p-2 rounded-md mb-2 cursor-pointer hover:bg-green-200 transition"
+            onClick={handleScrollToEnd}
+          >
+            {newCommentsCount} nuevo(s) comentario(s). Haz click para ver.
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit} className="mb-4 flex flex-col gap-2">
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Tu nombre"
+            className="border p-2 rounded-md dark:bg-gray-700 dark:text-gray-100"
+          />
+          <textarea
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Escribe tu comentario..."
+            className="border p-2 rounded-md dark:bg-gray-700 dark:text-gray-100"
+          />
+          <button
+            type="submit"
+            className="bg-green-500 text-white p-2 rounded-md hover:bg-green-600 transition"
+          >
+            Enviar
+          </button>
+        </form>
+
+        <div className="comments-list flex flex-col gap-4 overflow-y-auto max-h-[400px]">
+          {comments.map((comment) => (
+            <div
+              key={comment.id}
+              className="border p-4 rounded-lg shadow-sm hover:shadow-md transition bg-white dark:bg-gray-700 flex items-start gap-3"
+            >
+              <div className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-lg">
+                {comment.name[0].toUpperCase()}
+              </div>
+              <div className="flex-1">
+                <strong className="text-green-700 dark:text-green-300">{comment.name}</strong>
+                <p className="mt-1 text-gray-800 dark:text-gray-200">{comment.message}</p>
+                <small className="text-gray-500 dark:text-gray-400 mt-2 block">
+                  {new Date(comment.created_at).toLocaleString()}
+                </small>
+              </div>
+            </div>
+          ))}
+          <div ref={commentsEndRef} />
+        </div>
       </div>
 
-      {newCommentsCount > 0 && (
-        <div
-          className="bg-green-100 text-green-800 p-2 rounded-md mb-2 cursor-pointer hover:bg-green-200 transition"
-          onClick={handleScrollToEnd}
-        >
-          {newCommentsCount} nuevo(s) comentario(s). Haz click para ver.
+      {/* Comentarios Facebook */}
+      <div className="flex-1 p-4 rounded-lg bg-white dark:bg-gray-900 shadow-md">
+        <div className="font-bold text-lg mb-2 text-gray-900 dark:text-gray-100">
+          Comentarios de Facebook
         </div>
-      )}
-
-      <form onSubmit={handleSubmit} className="mb-4 flex flex-col gap-2">
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Tu nombre"
-          className="border p-2 rounded-md"
-        />
-        <textarea
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Escribe tu comentario..."
-          className="border p-2 rounded-md"
-        />
-        <button
-          type="submit"
-          className="bg-green-500 text-white p-2 rounded-md hover:bg-green-600 transition"
-        >
-          Enviar
-        </button>
-      </form>
-
-      <div className="comments-list flex flex-col gap-4 overflow-y-auto max-h-[400px]">
-        {comments.map((comment) => (
-          <div
-            key={comment.id}
-            className="border p-4 rounded-lg shadow-sm hover:shadow-md transition bg-white dark:bg-gray-700 flex items-start gap-3"
-          >
-            {/* Avatar con iniciales */}
-            <div className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-lg">
-              {comment.name[0].toUpperCase()}
-            </div>
-
-            <div className="flex-1">
-              <strong className="text-green-700 dark:text-green-300">{comment.name}</strong>
-              <p className="mt-1 text-gray-800 dark:text-gray-200">{comment.message}</p>
-              <small className="text-gray-500 dark:text-gray-400 mt-2 block">
-                {new Date(comment.created_at).toLocaleString()}
-              </small>
-            </div>
-          </div>
-        ))}
-        <div ref={commentsEndRef} />
+        <div
+          className="fb-comments"
+          data-href="https://yeseria-web.vercel.app/"
+          data-width="100%"
+          data-numposts="5"
+        ></div>
       </div>
     </div>
   );

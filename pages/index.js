@@ -1,12 +1,10 @@
-
-import React from 'react';
-import SeoHead from '../src/components/SeoHead'; // Asegúrate que la ruta sea correcta
+import { useEffect } from "react";
+import SeoHead from '../src/components/SeoHead';
 import StickyButtons from '../src/components/StickyButtons';
 import FondoLogo from '../src/components/FondoLogo';
 import Home from '../src/components/Home';
 import Gallery from '../src/components/Gallery';
 import Comments from '../src/components/Comments';
-
 
 export default function HomePage() {
   const pageTitle = "Inicio | Yesería Profesional - Emanuel Gauna";
@@ -14,12 +12,24 @@ export default function HomePage() {
   const pageKeywords = "yesero, drywall, yesería, pintura, presupuestos, Buenos Aires, AMBA";
   const ogTitle = "Yesería Profesional | Emanuel Gauna";
   const ogDescription = "Servicios de yesería, drywall y pintura. Contacto: 11 6437-1277.";
-  const ogImage = "/yesoImg/home-image.jpg"; // Asegúrate de tener una imagen en esta ruta
+  const ogImage = "/yesoImg/home-image.jpg";
   const ogUrl = "https://yeseria-web.vercel.app/";
+
+  // Cargar SDK de Facebook
+  useEffect(() => {
+    if (!document.getElementById("facebook-jssdk")) {
+      const script = document.createElement("script");
+      script.id = "facebook-jssdk";
+      script.src = "https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v17.0";
+      script.async = true;
+      document.body.appendChild(script);
+    } else {
+      if (window.FB) window.FB.XFBML.parse();
+    }
+  }, []);
 
   return (
     <>
-      {/* Usamos el componente SeoHead para una gestión más limpia del SEO */}
       <SeoHead
         title={pageTitle}
         description={pageDescription}
@@ -31,7 +41,6 @@ export default function HomePage() {
       />
       <main className="min-h-screen">
         <Home />
-        
         <Gallery />
         <FondoLogo />
         <Comments />
@@ -39,5 +48,4 @@ export default function HomePage() {
       <StickyButtons />
     </>
   );
-  
 }
