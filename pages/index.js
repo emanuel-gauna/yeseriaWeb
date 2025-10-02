@@ -4,7 +4,7 @@ import StickyButtons from '../src/components/StickyButtons';
 import FondoLogo from '../src/components/FondoLogo';
 import Home from '../src/components/Home';
 import Gallery from '../src/components/Gallery';
-import Comments from '../src/components/Comments';
+import Comments from "../src/components/comments/Comments.jsx";
 
 export default function HomePage() {
   const pageTitle = "Inicio | Yesería Profesional - Emanuel Gauna";
