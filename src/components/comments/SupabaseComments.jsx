@@ -237,60 +237,92 @@ export default function SupabaseComments({ currentUser, onRequireAuth }) {
             Cargando comentarios...
           </div>
         ) : (
-          comments.map((comment) => {
-            const authorName = comment.is_temp ? comment.profiles?.name : comment.profiles?.name || "Admin";
-            const canManage = currentUser && (isAdmin || comment.user_id === currentUser.id);
+         comments.map((comment) => {
+  // Determinar el nombre a mostrar
+  const authorName = comment.is_temp
+    ? comment.profiles?.name || "Tú" // comentarios recién enviados por el usuario actual
+    : comment.profiles?.name || (comment.user_id === ADMIN_UUID ? "Admin" : "Sin nombre"); // comentarios antiguos o admin
 
-            return (
-              <div key={comment.id} className={`border p-4 rounded-lg shadow-sm hover:shadow-md transition bg-white dark:bg-gray-700 ${comment.is_temp ? "opacity-60" : ""}`}>
-                <div className="flex items-start gap-3">
-                  <div className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-lg">
-                    {authorName?.[0]?.toUpperCase() ?? "U"}
-                  </div>
-                  <div className="flex-1">
-                    <strong className={`text-green-700 dark:text-green-300 ${comment.is_temp ? "italic" : ""}`}>
-                      {authorName} {comment.is_temp ? "(Enviando...)" : ""}
-                    </strong>
+  const canManage = currentUser && (isAdmin || comment.user_id === currentUser.id);
 
-                    {editingId === comment.id ? (
-                      <div className="mt-2">
-                        <textarea
-                          value={editMessage}
-                          onChange={(e) => setEditMessage(e.target.value)}
-                          className="border p-2 rounded-md w-full dark:bg-gray-600 dark:text-white"
-                        />
-                        <div className="flex gap-2 mt-2">
-                          <button type="button" onClick={() => saveEdit(comment.id)} className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600">
-                            Guardar
-                          </button>
-                          <button type="button" onClick={() => setEditingId(null)} className="bg-gray-400 text-white px-3 py-1 rounded-md hover:bg-gray-500">
-                            Cancelar
-                          </button>
-                        </div>
-                      </div>
-                    ) : (
-                      <p className="mt-1 text-gray-800 dark:text-gray-200">{comment.message}</p>
-                    )}
+  return (
+    <div
+      key={comment.id}
+      className={`border p-4 rounded-lg shadow-sm hover:shadow-md transition bg-white dark:bg-gray-700 ${
+        comment.is_temp ? "opacity-60" : ""
+      }`}
+    >
+      <div className="flex items-start gap-3">
+        <div className="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center font-bold text-lg">
+          {authorName?.[0]?.toUpperCase() ?? "U"}
+        </div>
+        <div className="flex-1">
+          <strong
+            className={`text-green-700 dark:text-green-300 ${
+              comment.is_temp ? "italic" : ""
+            }`}
+          >
+            {authorName} {comment.is_temp ? "(Enviando...)" : ""}
+          </strong>
 
-                    <small className="text-gray-500 dark:text-gray-400 mt-2 block">
-                      {new Date(comment.created_at).toLocaleString()}
-                    </small>
-                  </div>
-                </div>
-
-                {editingId !== comment.id && canManage && (
-                  <div className="flex gap-3 mt-3 justify-end">
-                    <button type="button" onClick={() => startEditing(comment)} className="text-blue-500 hover:underline">
-                      Editar
-                    </button>
-                    <button type="button" onClick={() => handleDelete(comment.id)} className="text-red-500 hover:underline">
-                      Eliminar
-                    </button>
-                  </div>
-                )}
+          {editingId === comment.id ? (
+            <div className="mt-2">
+              <textarea
+                value={editMessage}
+                onChange={(e) => setEditMessage(e.target.value)}
+                className="border p-2 rounded-md w-full dark:bg-gray-600 dark:text-white"
+              />
+              <div className="flex gap-2 mt-2">
+                <button
+                  type="button"
+                  onClick={() => saveEdit(comment.id)}
+                  className="bg-blue-500 text-white px-3 py-1 rounded-md hover:bg-blue-600"
+                >
+                  Guardar
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setEditingId(null)}
+                  className="bg-gray-400 text-white px-3 py-1 rounded-md hover:bg-gray-500"
+                >
+                  Cancelar
+                </button>
               </div>
-            );
-          })
+            </div>
+          ) : (
+            <p className="mt-1 text-gray-800 dark:text-gray-200">
+              {comment.message}
+            </p>
+          )}
+
+          <small className="text-gray-500 dark:text-gray-400 mt-2 block">
+            {new Date(comment.created_at).toLocaleString()}
+          </small>
+        </div>
+      </div>
+
+      {editingId !== comment.id && canManage && (
+        <div className="flex gap-3 mt-3 justify-end">
+          <button
+            type="button"
+            onClick={() => startEditing(comment)}
+            className="text-blue-500 hover:underline"
+          >
+            Editar
+          </button>
+          <button
+            type="button"
+            onClick={() => handleDelete(comment.id)}
+            className="text-red-500 hover:underline"
+          >
+            Eliminar
+          </button>
+        </div>
+      )}
+    </div>
+  );
+})
+
         )}
         <div ref={commentsEndRef} />
       </div>
