@@ -14,7 +14,7 @@ export default function MyApp({ Component, pageProps }) {
   const defaultTitle = "Yesero, Pintor, Albañil y Microcemento | Emanuel Gauna - Buenos Aires";
   const defaultDescription = "Servicios de yesería, pintura, albañilería y microcemento en Buenos Aires y AMBA. Refacciones, remodelaciones, pisos y revestimientos de calidad. Contacto: 11 6437-1277.";
   const defaultKeywords = "yesero, drywall, yesería, pintura, presupuestos, Buenos Aires, AMBA, albañil, microcemento";
-  const defaultImageUrl = "/logoyeso.png"; 
+  const defaultImageUrl = "/martillo.png"; 
 
   return (
     <>
@@ -32,17 +32,20 @@ export default function MyApp({ Component, pageProps }) {
         <meta httpEquiv="content-language" content="es-ar" />
 
         {/* Verificación de Google y Bing */}
-        <meta name="google-site-verification" content="TxMAIrxP6AnHjZ5xHX002zGqa75NscV5vRW4CxGsDsg" />
+        <meta name="google-site-verification" content="UQAZh4Zl91XyfkWipwIs2RCQnok6Osflx0utX5RL_gI" />
         <meta name="msvalidate.01" content="B8C1D7B66291DA1EC6F415AC167ADFB0" />
 
-        {/* Open Graph */}
-        <meta property="og:title" content={pageProps.title || defaultTitle} />
-        <meta property="og:description" content={pageProps.description || defaultDescription} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yeseria-web.vercel.app" />
-        <meta property="og:image" content={pageProps.image || defaultImageUrl} />
-        <meta property="og:site_name" content="Yesería Gauna" />
-        <meta property="og:locale" content="es_AR" />
+       {/* Open Graph */}
+<meta property="og:title" content={pageProps.title || defaultTitle} />
+<meta property="og:description" content={pageProps.description || defaultDescription} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://yeseriayreformas.com.ar" />
+<meta property="og:image" content={pageProps.image || defaultImageUrl} />
+<meta property="og:site_name" content="Yesería y Reformas - Emanuel Gauna" />
+<meta property="og:locale" content="es_AR" />
+
+{/* Canonical (opcional pero recomendado para SEO) */}
+<link rel="canonical" href="https://yeseriayreformas.com.ar" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
