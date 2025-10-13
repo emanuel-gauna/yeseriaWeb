@@ -39,7 +39,7 @@ export default function Acerca() {
           {/* QR */}
           <div className="p-3 bg-gray-100 rounded-xl mb-3">
             <QRCodeCanvas
-              value="https://yeseria-web.vercel.app"
+              value="https://yeseriayreformas.com.ar"
               size={160}
               bgColor="#ffffff"
               fgColor="#000000"
