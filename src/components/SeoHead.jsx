@@ -1,35 +1,51 @@
-import Head from 'next/head';
+import Head from "next/head";
 
-// Este componente te permite añadir metadatos de SEO a cada página.
-// Los motores de búsqueda, como Google y Bing, usarán esta información para indexar tu sitio.
-const SeoHead = ({ title, description, keywords, ogTitle, ogDescription, ogImage, ogUrl }) => {
-  const siteUrl = "https://yeseria-web.vercel.app";
-  const finalOgUrl = ogUrl || siteUrl;
-  const finalOgImage = ogImage || `${siteUrl}/images/default-og-image.jpg`; // Asegúrate de tener una imagen por defecto en la carpeta public
+// Componente SEO reutilizable para todas las páginas
+export default function SeoHead({
+  title,
+  description,
+  keywords,
+  ogTitle,
+  ogDescription,
+  ogImage,
+  ogUrl,
+  canonical,
+}) {
+  const siteUrl = "https://yeseriayreformas.com.ar";
+  const finalTitle = title || "Yesería y Reformas | Emanuel Gauna";
+  const finalDescription =
+    description ||
+    "Servicios de yesería, pintura y reformas integrales en Buenos Aires y AMBA. Profesionalismo y calidad garantizada. Contacto: 11 6437-1277.";
+  const finalKeywords =
+    keywords ||
+    "yesero, reformas, pintura, microcemento, cielorrasos, molduras, albañilería, Buenos Aires, AMBA";
+  const finalOgUrl = ogUrl || canonical || siteUrl;
+  const finalOgImage = ogImage || `${siteUrl}/images/default-og-image.jpg`;
 
   return (
     <Head>
-      {/* Meta etiquetas básicas */}
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
+      {/* --- Meta básicas --- */}
+      <title>{finalTitle}</title>
+      <meta name="description" content={finalDescription} />
+      <meta name="keywords" content={finalKeywords} />
       <meta name="robots" content="index, follow" />
+      <meta httpEquiv="content-language" content="es-ar" />
       <link rel="canonical" href={finalOgUrl} />
 
-      {/* Meta etiquetas de Open Graph (para redes sociales) */}
-      <meta property="og:title" content={ogTitle || title} />
-      <meta property="og:description" content={ogDescription || description} />
+      {/* --- Open Graph --- */}
+      <meta property="og:title" content={ogTitle || finalTitle} />
+      <meta property="og:description" content={ogDescription || finalDescription} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={finalOgUrl} />
       <meta property="og:image" content={finalOgImage} />
+      <meta property="og:site_name" content="Yesería y Reformas - Emanuel Gauna" />
+      <meta property="og:locale" content="es_AR" />
 
-      {/* Meta etiquetas de Twitter */}
+      {/* --- Twitter --- */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={ogTitle || title} />
-      <meta name="twitter:description" content={ogDescription || description} />
+      <meta name="twitter:title" content={ogTitle || finalTitle} />
+      <meta name="twitter:description" content={ogDescription || finalDescription} />
       <meta name="twitter:image" content={finalOgImage} />
     </Head>
   );
-};
-
-export default SeoHead;
+}

@@ -20,7 +20,7 @@ export default function Acerca() {
         <meta property="og:title" content="Acerca de Emanuel Gauna | Yesero y Pintor Profesional" />
         <meta property="og:description" content="Servicios de yesería, pintura, albañilería y microcemento en Buenos Aires y AMBA. Contacto: 11 6437-1277." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yeseria-web.vercel.app/acerca-de-nosotros" />
+        <meta property="og:url" content="https://yeseriayreformas.com.ar/acerca-de-nosotros" />
         <meta property="og:image" content="/logoyeso.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Acerca de Emanuel Gauna | Yesero y Pintor Profesional" />
