@@ -14,7 +14,7 @@ export default function PinturaRefacciones() {
         ogTitle="Refacciones y Restauraciones de Pintura | Emanuel Gauna"
         ogDescription="Aplicación profesional de refacciones y restauraciones de pintura interior y exterior en viviendas, oficinas y locales comerciales en Buenos Aires y AMBA."
         ogImage="/pinturaImg/refaccion1.jpg"
-        ogUrl="https://www.yeseriayreformas.com.ar/pintura-refacciones"
+        ogUrl="https://yeseriayreformas.com.ar/pintura-refacciones"
       />
 
       <main className="min-h-screen">
