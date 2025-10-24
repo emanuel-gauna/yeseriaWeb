@@ -14,7 +14,7 @@ export default function Revestimientos() {
         ogTitle="Revestimientos Profesionales | Emanuel Gauna"
         ogDescription="Instalación profesional de revestimientos y pisos en interiores y exteriores en Buenos Aires y AMBA."
         ogImage="/albaImg/revestimientos1.jpg"
-        ogUrl="https://www.yeseriayreformas.com.ar/revestimientos"
+        ogUrl="https://yeseriayreformas.com.ar/revestimientos"
       />
 
       <main className="min-h-screen">

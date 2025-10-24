@@ -1,36 +1,31 @@
-import Head from 'next/head';
+
 import AcercaComponent from '../src/components/Acerca';
 import FondoLogo from '../src/components/FondoLogo';
 import StickyButtons from '../src/components/StickyButtons';
+import SeoHead from '../src/components/SeoHead'; // 🟢 Importamos el componente reutilizable
 
 export default function Acerca() {
   return (
     <>
-      <Head>
-        <title>Acerca de Emanuel Gauna | Yesero, Pintor y Albañil Profesional</title>
-        <meta
-          name="description"
-          content="Servicios profesionales de yesería, pintura, albañilería y microcemento. Garantía de calidad en remodelaciones en Buenos Aires y AMBA."
-        />
-        <meta
-          name="keywords"
-          content="yesero, pintor, albañil, microcemento, remodelaciones, yesería, pintura, revestimientos, Buenos Aires, AMBA"
-        />
-        {/* Open Graph y Twitter para redes sociales */}
-        <meta property="og:title" content="Acerca de Emanuel Gauna | Yesero y Pintor Profesional" />
-        <meta property="og:description" content="Servicios de yesería, pintura, albañilería y microcemento en Buenos Aires y AMBA. Contacto: 11 6437-1277." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://yeseriayreformas.com.ar/acerca-de-nosotros" />
-        <meta property="og:image" content="/logoyeso.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Acerca de Emanuel Gauna | Yesero y Pintor Profesional" />
-        <meta name="twitter:description" content="Servicios de yesería, pintura, albañilería y microcemento en Buenos Aires y AMBA. Contacto: 11 6437-1277." />
-        <meta name="twitter:image" content="/logoyeso.png" />
-{/* Canonical para evitar contenido duplicado */}
-        <link rel="canonical" href="https://yeseriayreformas.com.ar/acerca-de-nosotros" />
-        {/* Para evitar el error de la etiqueta de idioma */}
-        <meta httpEquiv="content-language" content="es-ar" />
-      </Head>
+      {/* 🟢 Implementación del SeoHead (Canonical SIN www) 🟢 */}
+      <SeoHead
+        // Metadatos SEO básicos
+        title="Acerca de Emanuel Gauna | Yesero, Pintor y Albañil Profesional"
+        description="Servicios profesionales de yesería, pintura, albañilería y microcemento. Garantía de calidad en remodelaciones en Buenos Aires y AMBA."
+        keywords="yesero, pintor, albañil, microcemento, remodelaciones, yesería, pintura, revestimientos, Buenos Aires, AMBA"
+        
+        // Metadatos Open Graph
+        ogTitle="Acerca de Emanuel Gauna | Yesero y Pintor Profesional"
+        ogDescription="Servicios de yesería, pintura, albañilería y microcemento en Buenos Aires y AMBA. Contacto: 11 6437-1277."
+        ogImage="/logoyeso.png" 
+        // La URL canónica. El componente SeoHead usará este valor (SIN www) para la etiqueta <link rel="canonical"> y Open Graph URL.
+        ogUrl="https://yeseriayreformas.com.ar/acerca-de-nosotros"
+        
+        // NOTA: El componente SeoHead.jsx ya incluye el resto de etiquetas:
+        // - <meta name="robots" content="index, follow" />
+        // - <meta httpEquiv="content-language" content="es-ar" />
+        // - Metadatos de Twitter
+      />
 
       <main className="min-h-screen">
         <FondoLogo />
